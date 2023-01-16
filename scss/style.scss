@@ -1,0 +1,99 @@
+@import "nullstyle.scss";
+@import "ibg.scss";
+@import "footer.scss";
+
+
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: black;
+}
+
+
+.full-screen {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    .full-screen__body {
+        padding: 50px 10px;
+        background-color: rgba(0, 0, 0, 0.164);
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    .full-screen__title {
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 15px;
+        font-weight: 700;
+        margin: 0px 0px 20px 0px;
+    }
+    .full-screen__text {
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 10px;
+    }
+    .full-screen__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.content {
+
+}
+.content__container {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    margin: 0px 0px 20px 0px;
+    .card__row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .card__image {
+        height: 500px;
+        width: 100%;
+        margin: 0px 0px 10px 0px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+    
+    
+    }
+    .card__title {
+        color: white;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 20px;
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        margin: 0px 0px 5px 0px;
+    }
+    .card__text {
+        color: white;
+        font-size: 15px;
+        letter-spacing: 8px;
+    }
+}

@@ -1,0 +1,9 @@
+.ibg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.ibg img {
+  width: 100%;
+  height: 100%;
+}
