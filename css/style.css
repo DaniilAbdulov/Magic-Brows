@@ -130,11 +130,22 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
+@font-face {
+  font-family: "Bang";
+  src: url("/fonts/Black.Angel.Demo.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+html {
+  font-family: Gilroy, "Helvetica Neue", Helvetica, sans-serif;
+  color: #fff;
+}
+
 .wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: black;
+  background: #121212;
 }
 
 .full-screen {
@@ -153,21 +164,22 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 .full-screen .full-screen__title {
   text-align: center;
   font-size: 30px;
   letter-spacing: 15px;
   font-weight: 700;
-  margin: 0px 0px 20px 0px;
+  margin: 0px 0px 30px 0px;
 }
 .full-screen .full-screen__text {
+  font-family: "Bang", "Helvetica Neue", Helvetica, sans-serif;
   text-align: center;
-  font-size: 18px;
+  font-size: 48px;
   letter-spacing: 10px;
+  margin: 0px 0px 30px 0px;
 }
-.full-screen .full-screen__video {
+.full-screen .full-screen__photo {
   position: absolute;
   top: 0;
   left: 0;
@@ -176,46 +188,7 @@ h1, h2, h3, h4, h5, h6 {
   -o-object-fit: cover;
      object-fit: cover;
 }
-
-.content__container {
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.card {
-  margin: 0px 0px 20px 0px;
-}
-.card .card__row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.card .card__image {
-  height: 500px;
-  width: 100%;
-  margin: 0px 0px 10px 0px;
-}
-.card .card__image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 20px;
-}
-.card .card__title {
-  color: white;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 20px;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  margin: 0px 0px 5px 0px;
-}
-.card .card__text {
-  color: white;
-  font-size: 15px;
-  letter-spacing: 8px;
+.full-screen .full-screen__link {
+  text-decoration: underline;
+  letter-spacing: 5px;
 }
