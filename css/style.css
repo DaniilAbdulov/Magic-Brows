@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
   font-family: "Bang";
-  src: url("/fonts/Black.Angel.Demo.ttf") format("truetype");
+  src: url("../fonts/Black.Angel.Demo.ttf") format("truetype");
   font-style: normal;
   font-weight: normal;
 }
