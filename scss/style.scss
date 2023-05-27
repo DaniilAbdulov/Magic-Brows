@@ -1,6 +1,15 @@
 @import "nullstyle.scss";
 @import "ibg.scss";
 @import "footer.scss";
+
+@media (max-width: 1000px) {
+    .container{
+        max-width: 800px;
+    }
+}
+
+
+
 @font-face {
     
     font-family: "Bang"; 
@@ -67,4 +76,21 @@ html{
         text-decoration: underline;
         letter-spacing: 5px;
     }
+    @media (max-width: 430px) {
+        .full-screen__title {
+            font-size: 20px;
+            letter-spacing: 10px;
+            font-weight: 700;
+            margin: 0px 0px 20px 0px;
+        }
+        .full-screen__text {
+            font-size: 28px;
+            letter-spacing: 10px;
+            margin: 0px 0px 20px 0px;
+        }
+    }
+}
+.container{
+    margin: 0 auto;
+    padding: 0 20px;
 }

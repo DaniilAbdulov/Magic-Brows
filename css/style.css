@@ -130,6 +130,11 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 
+@media (max-width: 1000px) {
+  .container {
+    max-width: 800px;
+  }
+}
 @font-face {
   font-family: "Bang";
   src: url("../fonts/Black.Angel.Demo.ttf") format("truetype");
@@ -191,4 +196,22 @@ html {
 .full-screen .full-screen__link {
   text-decoration: underline;
   letter-spacing: 5px;
+}
+@media (max-width: 430px) {
+  .full-screen .full-screen__title {
+    font-size: 20px;
+    letter-spacing: 10px;
+    font-weight: 700;
+    margin: 0px 0px 20px 0px;
+  }
+  .full-screen .full-screen__text {
+    font-size: 28px;
+    letter-spacing: 10px;
+    margin: 0px 0px 20px 0px;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
 }
