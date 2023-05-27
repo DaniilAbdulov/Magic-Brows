@@ -233,19 +233,102 @@ body {
   padding: 0 20px;
 }
 
+.about {
+  margin: 0px 0px 50px 0px;
+}
 .about .about__body {
-  display: flex;
   gap: 10px;
 }
-.about .about__title {
-  margin: 0px 0px 20px 0px;
+.about .about_image img {
+  border-radius: 0px 40px 0px 40px;
 }
-.about .about_image {
+.about .about__circle {
+  top: 5px;
+}
+@media (max-width: 767px) {
+  .about .about__circle {
+    left: calc(110px + 136 * ((100vw - 320px) / 1280));
+  }
+}
+@media (min-width: 767px) {
+  .about .about__circle {
+    left: calc(110px + 136 * (100vw / 1280));
+  }
+}
+
+.block {
+  position: relative;
+  z-index: 10;
+}
+.block .block__title {
+  font-weight: 700;
+  margin: 0px 0px 40px 0px;
+  letter-spacing: 2px;
+}
+@media (max-width: 767px) {
+  .block .block__title {
+    font-size: calc(25px + 34 * ((100vw - 320px) / 1280));
+  }
+}
+@media (min-width: 767px) {
+  .block .block__title {
+    font-size: calc(25px + 34 * (100vw / 1280));
+  }
+}
+.block .block__title-circle {
+  position: absolute;
+  z-index: -1;
+}
+.block .block__body {
+  display: flex;
+}
+@media (max-width: 767px) {
+  .block .block__text {
+    font-size: calc(14px + 15.3 * ((100vw - 320px) / 1280));
+  }
+}
+@media (min-width: 767px) {
+  .block .block__text {
+    font-size: calc(14px + 15.3 * (100vw / 1280));
+  }
+}
+.block .block__image {
   flex: 1 0 50%;
   max-width: 100%;
 }
-.about .about_image img {
+.block .block__image img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
+}
+
+.circle {
+  background-color: #4E0E1F;
+  border-radius: 50%;
+}
+@media (max-width: 767px) {
+  .circle {
+    width: calc(30px + 42.5 * ((100vw - 320px) / 1280));
+    height: calc(30px + 42.5 * ((100vw - 320px) / 1280));
+  }
+}
+@media (min-width: 767px) {
+  .circle {
+    width: calc(30px + 42.5 * (100vw / 1280));
+    height: calc(30px + 42.5 * (100vw / 1280));
+  }
+}
+
+.portfolio .portfolio__circle {
+  top: 5px;
+}
+@media (max-width: 767px) {
+  .portfolio .portfolio__circle {
+    left: calc(80px + 119 * ((100vw - 320px) / 1280));
+  }
+}
+@media (min-width: 767px) {
+  .portfolio .portfolio__circle {
+    left: calc(80px + 119 * (100vw / 1280));
+  }
 }
