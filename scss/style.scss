@@ -38,6 +38,9 @@ html{
     font-family: Gilroy, "Helvetica Neue", Helvetica, sans-serif;
     color: #fff
 }
+body{
+    background: #121212;
+}
 
 .wrapper {
     min-height: 100vh;
@@ -55,7 +58,7 @@ html{
     
     .full-screen__body {
         padding: 50px 10px;
-        background-color: rgba(0, 0, 0, 0.164);
+        background: #121212;
         position: relative;
         z-index: 2;
         display: flex;
@@ -101,4 +104,27 @@ html{
     max-width: #{$maxWidth + px};
     margin: 0 auto;
     padding: 0 20px;
+}
+
+.about {
+    .about__body {
+        display: flex;
+    }
+    .about__textblock {
+    }
+    .about__title {
+    }
+    .about__text {
+    }
+    .about_image {
+        max-width: 100px;
+        height: 300px;
+        img{
+            object-fit: cover;
+        }
+    }
+}
+.title {
+}
+.text {
 }

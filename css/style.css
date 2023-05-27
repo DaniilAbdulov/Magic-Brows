@@ -141,6 +141,10 @@ html {
   color: #fff;
 }
 
+body {
+  background: #121212;
+}
+
 .wrapper {
   min-height: 100vh;
   display: flex;
@@ -156,7 +160,7 @@ html {
 }
 .full-screen .full-screen__body {
   padding: 50px 10px;
-  background-color: rgba(0, 0, 0, 0.164);
+  background: #121212;
   position: relative;
   z-index: 2;
   display: flex;
@@ -227,4 +231,16 @@ html {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.about .about__body {
+  display: flex;
+}
+.about .about_image {
+  max-width: 100px;
+  height: 300px;
+}
+.about .about_image img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
