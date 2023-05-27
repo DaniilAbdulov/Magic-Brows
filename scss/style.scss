@@ -137,6 +137,11 @@ body{
     .about__body {
         gap: 10px;
     }
+    @media (max-width:768px) {
+        .about__body {
+            flex-direction: column;
+        }
+    }
     .about__text {
 
     }

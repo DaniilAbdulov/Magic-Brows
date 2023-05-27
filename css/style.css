@@ -240,6 +240,11 @@ body {
 .about .about__body {
   gap: 10px;
 }
+@media (max-width: 768px) {
+  .about .about__body {
+    flex-direction: column;
+  }
+}
 .about .about_image img {
   border-radius: 0px 40px 0px 40px;
 }
