@@ -109,18 +109,22 @@ body{
 .about {
     .about__body {
         display: flex;
+        gap: 10px;
     }
-    .about__textblock {
+    .about__text {
+
     }
     .about__title {
+        margin: 0px 0px 20px 0px;
     }
     .about__text {
     }
     .about_image {
-        max-width: 100px;
-        height: 300px;
+        flex: 1 0 50%;
+        max-width: 100%;
         img{
             object-fit: cover;
+            width: 100%;
         }
     }
 }
