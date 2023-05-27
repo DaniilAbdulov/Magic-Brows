@@ -172,6 +172,7 @@ body {
 .full-screen .full-screen__title {
   padding: 0 10px;
   text-align: center;
+  text-transform: uppercase;
   font-weight: 700;
   margin: 0px 0px 30px 0px;
 }

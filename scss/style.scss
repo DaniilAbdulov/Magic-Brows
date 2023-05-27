@@ -1,6 +1,7 @@
 @import "nullstyle.scss";
 @import "ibg.scss";
 @import "footer.scss";
+ 
 
 $redColor: #4E0E1F;
 
@@ -95,6 +96,7 @@ body{
     .full-screen__title {
         padding: 0 10px;
         text-align: center;
+        text-transform: uppercase;
         @include adaptiv-font(60, 28);
         @include adaptiv-letter-space(12, 5);
         font-weight: 700;
