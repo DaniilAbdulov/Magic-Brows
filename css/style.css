@@ -217,7 +217,9 @@ html {
      object-fit: cover;
 }
 .full-screen .full-screen__link {
-  text-decoration: underline;
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 2px solid white;
   letter-spacing: 5px;
 }
 

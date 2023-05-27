@@ -2,11 +2,6 @@
 @import "ibg.scss";
 @import "footer.scss";
 
-// @media (max-width: 1000px) {
-//     .container{
-//         max-width: 800px;
-//     }
-// }
 
 $maxWidth:1280;
 @mixin adaptiv-font($pcSize, $mobSize){
@@ -94,8 +89,11 @@ html{
         object-fit: cover;
     }
     .full-screen__link{
-        text-decoration: underline;
+        text-decoration: none;
+        padding-bottom: 3px;
+        border-bottom: 2px solid white;
         letter-spacing: 5px;
+
     }
 
 }
