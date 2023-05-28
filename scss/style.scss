@@ -4,6 +4,7 @@
  
 
 $redColor: #4E0E1F;
+$heightPrice: 400px;
 
 $maxWidth:1280;
 @mixin adaptiv-font($pcSize, $mobSize){
@@ -74,7 +75,7 @@ body{
     background: #121212;
 }
 
-
+//==========================================================================================================================
 .full-screen {
     position: relative;
     min-height: 100vh;
@@ -126,12 +127,13 @@ body{
     }
 
 }
+//==========================================================================================================================
 .container{
     max-width: #{$maxWidth + px};
     margin: 0 auto;
     padding: 0 20px;
 }
-
+//==========================================================================================================================
 .about {
     margin: 0px 0px 50px 0px;
     .about__body {
@@ -163,6 +165,7 @@ body{
 
 
 }
+//==========================================================================================================================
 .block {
     position: relative;
     z-index: 10;
@@ -202,9 +205,9 @@ body{
     background-color: $redColor;
     border-radius: 50%;
 }
-
+//==========================================================================================================================
 .portfolio {
-
+    margin: 0px 0px 40px 0px;
     .portfolio__title {
     }
     .portfolio__circle {
@@ -216,7 +219,19 @@ body{
 .portfolio__items {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+@media (max-width:431px) {
+    .portfolio__items{
+
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
+@media (max-width:352px) {
+    .portfolio__items{
+
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 }
 .portfolio__item {
   
@@ -230,4 +245,106 @@ body{
     grid-row: span 2;
 }
 
- 
+@media (min-width:1339px) {
+    .last_item{
+        display: none;
+    }
+}
+ //==========================================================================================================================
+
+.price {
+    
+    .price__title {
+        margin: 0px 0px 50px 0px;
+    }
+    .price__circle {
+        top: 3px;
+        @include adaptiv-position(20, 45)
+    }
+    .price__body {
+        padding: 0 20px;
+        display: flex;
+        gap: 20px;
+    }
+    .price__table {
+        flex: 1 0 50%;
+    }
+    .price__image{
+        flex: 1 0 50%;
+        position: relative;
+        min-height: $heightPrice;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .price__689{
+        display: none;
+    }
+    @media (max-width:713px) {
+        .price__body {
+            position: relative;
+            z-index: 120;
+        }
+        .price__table {
+
+            
+        }
+
+        .price__689{
+
+
+        }
+        .price__image{
+            display: none;
+        }
+    }
+}
+
+.table {
+    padding: 10px;
+    border: 1px solid #fff;
+
+    .table__items {
+        display:flex;
+        flex-direction:column;
+        height: $heightPrice;
+        justify-content: space-between;
+
+    }
+    .table__item {
+        @include adaptiv-font(14, 11);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid white;
+        padding-bottom: 3px;
+        margin: 0px 0px 10px 0px;
+    }
+    .table__item-label {
+    }
+    .table__item-price {
+    }
+    @media (max-width:713px) {
+        .table__items {
+            position: relative;
+    
+        }
+        .price__689{
+            display: block;
+            position: relative;
+            img{
+                position: absolute;
+
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+    }
+}
