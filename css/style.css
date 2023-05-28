@@ -338,6 +338,20 @@ body {
     left: calc(80px + 119 * (100vw / 1280));
   }
 }
-.portfolio .portfolio__colums-two {
-  font-size: 40px;
+
+.portfolio__items {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.portfolio__item img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.portfolio__item-big {
+  grid-column: span 2;
+  grid-row: span 2;
 }

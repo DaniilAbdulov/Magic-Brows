@@ -211,17 +211,23 @@ body{
         top: 5px;
         @include adaptiv-position(150, 80)
     }
-    .portfolio__body {
-    }
-    .portfolio__colums {
-    }
-    .portfolio__colums-one {
-    }
-    .portfolio__colums-two {
-        font-size: 40px;
+
+}
+.portfolio__items {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.portfolio__item {
+  
+    img{
+        width: 100%;
+        object-fit: cover;
     }
 }
-
-
-.two {
+.portfolio__item-big{
+    grid-column: span 2;
+    grid-row: span 2;
 }
+
+ 
