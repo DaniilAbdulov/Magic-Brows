@@ -338,3 +338,6 @@ body {
     left: calc(80px + 119 * (100vw / 1280));
   }
 }
+.portfolio .portfolio__colums-two {
+  font-size: 40px;
+}
