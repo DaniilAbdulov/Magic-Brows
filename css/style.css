@@ -374,6 +374,9 @@ body {
     display: none;
   }
 }
+.price {
+  margin: 0px 0px 40px 0px;
+}
 .price .price__title {
   margin: 0px 0px 50px 0px;
 }
