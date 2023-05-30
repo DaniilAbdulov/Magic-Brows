@@ -240,9 +240,20 @@ body {
 .about .about__body {
   gap: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .about .about__body {
     flex-direction: column;
+  }
+}
+.about .about__text {
+  margin: 0px 0px 10px 0px;
+}
+.about .about__title {
+  margin: 0px 0px 50px 0px;
+}
+@media (max-width: 767px) {
+  .about .about__title {
+    margin: 0px 0px 30px 0px;
   }
 }
 .about .about_image img {
@@ -262,13 +273,17 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .about {
+    margin: 0px 0px 30px 0px;
+  }
+}
 .block {
   position: relative;
   z-index: 10;
 }
 .block .block__title {
   font-weight: 700;
-  margin: 0px 0px 40px 0px;
   letter-spacing: 2px;
 }
 @media (max-width: 767px) {
@@ -326,7 +341,15 @@ body {
 }
 
 .portfolio {
-  margin: 0px 0px 40px 0px;
+  margin: 0px 0px 50px 0px;
+}
+.portfolio .portfolio__title {
+  margin: 0px 0px 50px 0px;
+}
+@media (max-width: 767px) {
+  .portfolio .portfolio__title {
+    margin: 0px 0px 30px 0px;
+  }
 }
 .portfolio .portfolio__circle {
   top: 5px;
@@ -342,6 +365,11 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .portfolio {
+    margin: 0px 0px 30px 0px;
+  }
+}
 .portfolio__items {
   display: grid;
   gap: 10px;
@@ -359,6 +387,7 @@ body {
   }
 }
 .portfolio__item img {
+  border-radius: 10px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -375,10 +404,15 @@ body {
   }
 }
 .price {
-  margin: 0px 0px 40px 0px;
+  margin: 0px 0px 50px 0px;
 }
 .price .price__title {
   margin: 0px 0px 50px 0px;
+}
+@media (max-width: 767px) {
+  .price .price__title {
+    margin: 0px 0px 30px 0px;
+  }
 }
 .price .price__circle {
   top: 3px;
@@ -430,6 +464,11 @@ body {
   }
 }
 
+@media (max-width: 767px) {
+  .price {
+    margin: 0px 0px 30px 0px;
+  }
+}
 .table {
   padding: 10px;
   border: 1px solid #fff;
@@ -450,13 +489,16 @@ body {
 }
 @media (max-width: 767px) {
   .table .table__item {
-    font-size: calc(11px + 5.1 * ((100vw - 320px) / 1280));
+    font-size: calc(12px + 3.4 * ((100vw - 320px) / 1280));
   }
 }
 @media (min-width: 767px) {
   .table .table__item {
-    font-size: calc(11px + 5.1 * (100vw / 1280));
+    font-size: calc(12px + 3.4 * (100vw / 1280));
   }
+}
+.table .table__item-label {
+  padding-right: 3px;
 }
 @media (max-width: 713px) {
   .table .table__items {

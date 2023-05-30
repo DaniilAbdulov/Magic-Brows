@@ -2,7 +2,7 @@
 @import "ibg.scss";
 @import "footer.scss";
  
-
+$marginMobile: 0px 0px 30px 0px;
 $redColor: #4E0E1F;
 $heightPrice: 400px;
 
@@ -136,20 +136,25 @@ body{
 //==========================================================================================================================
 .about {
     margin: 0px 0px 50px 0px;
+    
     .about__body {
         gap: 10px;
     }
-    @media (max-width:768px) {
+    @media (max-width:767px) {
         .about__body {
             flex-direction: column;
         }
     }
     .about__text {
-
+        margin: 0px 0px 10px 0px;
     }
     .about__title {
-
+        margin: 0px 0px 50px 0px;
     }
+    @media (max-width:767px) {
+    .about__title{
+        margin: $marginMobile;
+    }}
     .about__text {
     }
     .about_image {
@@ -165,6 +170,12 @@ body{
 
 
 }
+@media (max-width:767px) {
+    .about{
+        margin: $marginMobile;
+    }
+
+}
 //==========================================================================================================================
 .block {
     position: relative;
@@ -172,7 +183,6 @@ body{
     .block__title {
         @include adaptiv-font(45, 25);
         font-weight: 700;
-        margin: 0px 0px 40px 0px;
         letter-spacing: 2px;
     }
     .block__title-circle {
@@ -207,14 +217,26 @@ body{
 }
 //==========================================================================================================================
 .portfolio {
-    margin: 0px 0px 40px 0px;
+    margin: 0px 0px 50px 0px;
+
     .portfolio__title {
+        margin: 0px 0px 50px 0px;
+    }
+    @media (max-width:767px) {
+        .portfolio__title{
+            margin: $marginMobile;
+        }
     }
     .portfolio__circle {
         top: 5px;
         @include adaptiv-position(150, 80)
     }
 
+}
+@media (max-width:767px) {
+    .portfolio{
+        margin: $marginMobile;
+    }
 }
 .portfolio__items {
     display: grid;
@@ -236,6 +258,7 @@ body{
 .portfolio__item {
   
     img{
+        border-radius: 10px;
         width: 100%;
         object-fit: cover;
     }
@@ -253,9 +276,15 @@ body{
  //==========================================================================================================================
 
 .price {
-    margin: 0px 0px 40px 0px;
+    margin: 0px 0px 50px 0px;
     .price__title {
         margin: 0px 0px 50px 0px;
+    }
+    @media (max-width:767px) {
+        .price__title{
+            margin: $marginMobile;
+        }
+    
     }
     .price__circle {
         top: 3px;
@@ -305,7 +334,12 @@ body{
         }
     }
 }
+@media (max-width:767px) {
+    .price{
+        margin: $marginMobile;
+    }
 
+}
 .table {
     padding: 10px;
     border: 1px solid #fff;
@@ -318,7 +352,7 @@ body{
 
     }
     .table__item {
-        @include adaptiv-font(14, 11);
+        @include adaptiv-font(14, 12);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -327,6 +361,7 @@ body{
         margin: 0px 0px 10px 0px;
     }
     .table__item-label {
+        padding-right: 3px;
     }
     .table__item-price {
     }
