@@ -454,13 +454,22 @@ body {
   top: 0;
   left: 0;
 }
-.price .price__689 {
-  display: none;
-}
 @media (max-width: 713px) {
-  .price .price__body {
+  .price .price__table {
     position: relative;
     z-index: 120;
+  }
+  .price .price__table::before {
+    content: "";
+    background-image: url("/img/kamila.JPG");
+    position: absolute;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    z-index: -1;
   }
   .price .price__image {
     display: none;
@@ -502,19 +511,4 @@ body {
 }
 .table .table__item-label {
   padding-right: 3px;
-}
-@media (max-width: 713px) {
-  .table .table__items {
-    position: relative;
-  }
-  .table .price__689 {
-    display: block;
-    position: relative;
-  }
-  .table .price__689 img {
-    position: absolute;
-    width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
 }

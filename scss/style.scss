@@ -190,17 +190,14 @@ body{
     .block__title-circle {
         position: absolute;
         z-index: -1;
-
     }
     
     .block__body {
         display: flex;
-
     }
     
     .block__text {
         @include adaptiv-font(23, 14);
-
     }
     
     .block__image {
@@ -286,7 +283,6 @@ body{
         .price__title{
             margin: $marginMobile;
         }
-    
     }
     .price__circle {
         top: 3px;
@@ -314,22 +310,24 @@ body{
             left: 0;
         }
     }
-    .price__689{
-        display: none;
-    }
+
     @media (max-width:713px) {
-        .price__body {
+        .price__table {
             position: relative;
             z-index: 120;
-        }
-        .price__table {
-
+            &::before{
+                content: '';
+                background-image: url('/img/kamila.JPG'); 
+                position: absolute; 
+                background-size: cover;
+                top: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 100%; 
+                opacity: 0.3; 
+                z-index: -1;
+            }
             
-        }
-
-        .price__689{
-
-
         }
         .price__image{
             display: none;
@@ -340,7 +338,6 @@ body{
     .price{
         margin: $marginMobile;
     }
-
 }
 .table {
     padding: 10px;
@@ -366,22 +363,5 @@ body{
         padding-right: 3px;
     }
     .table__item-price {
-    }
-    @media (max-width:713px) {
-        .table__items {
-            position: relative;
-    
-        }
-        .price__689{
-            display: block;
-            position: relative;
-            img{
-                position: absolute;
-
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-
     }
 }
