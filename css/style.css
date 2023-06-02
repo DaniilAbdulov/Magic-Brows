@@ -461,7 +461,7 @@ body {
   }
   .price .price__table::before {
     content: "";
-    background-image: url("/img/kamila.JPG");
+    background-image: url("./img/kamila.JPG");
     position: absolute;
     background-size: cover;
     top: 0;
