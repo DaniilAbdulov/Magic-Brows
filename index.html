@@ -9,6 +9,7 @@
     <link href = "fonts\gilroy\stylesheet.css" rel = "stylesheet" type = "text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="./css/animate.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <title>Magic Brows</title>
 </head>
 <body>
@@ -120,11 +121,99 @@
                         </div>
                     </div>
                 </div>
-                <div class="bb">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia quisquam corrupti rem quam. Nulla nesciunt saepe temporibus, odit eaque molestias quos nemo nobis qui aspernatur magnam, doloremque repellendus mollitia nam amet. Sequi facere expedita distinctio ex, officiis eveniet optio excepturi omnis necessitatibus voluptatum molestias iusto minima inventore debitis enim tempora architecto nobis natus cupiditate perspiciatis itaque vel ratione autem quasi. Fuga velit totam soluta, ea debitis laudantium quasi quibusdam, provident porro rem eius laboriosam ipsum perspiciatis mollitia, voluptatum sint repellat illo optio obcaecati! Expedita, sunt, nisi temporibus modi quas ipsum eaque ipsam voluptas illo ducimus maiores officiis tenetur nesciunt enim in aliquid nihil pariatur! Doloribus repellat totam rerum suscipit ipsa, est dolores ratione voluptate adipisci repudiandae non, nihil explicabo porro! Veritatis, nemo dolor pariatur necessitatibus, iure aut facilis quibusdam, cupiditate distinctio magni velit culpa. Dolor ducimus reprehenderit magni at soluta libero fugit. Sunt neque nostrum, totam vitae delectus nemo suscipit. Minima aperiam, saepe, dolore omnis temporibus distinctio error eos possimus exercitationem esse eaque, veniam harum odio eveniet debitis reiciendis asperiores. Provident neque in eveniet facilis quibusdam molestiae recusandae? Quae, corporis voluptas fuga ad est soluta quia facilis aliquam illum eaque fugiat vel autem voluptatibus blanditiis? Neque ea id magnam laborum.</div>
+                <div class="swiper mySwiper">
+                    <div class="swiper__title wow fadeInLeft">My works</div>
+                    <div class="swiper-wrapper wow fadeIn">
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="swiper-slide__box box">
+                            <h1 class="box__title">Gome</h1>
+                            <p class="box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, officia.</p>
+                        </div>
+                        <img src="./img/kamila.JPG" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+
+
             </div>
         </div>
    </div>
     <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper(".mySwiper", {
+          effect: "coverflow",
+          loop: true,
+          speed: 1000,
+          grabCursor: true,
+          centeredSlides: true,
+          slidesPerView: "auto",
+          coverflowEffect: {
+            depth: 100,
+            modifier: 1,
+            rotate: 50,
+            slideShadows: true,
+            stretch: 0,
+          },
+        });
+      </script>
    <script src="./js/wow.min.js"></script>
    <script>
    new WOW().init();
