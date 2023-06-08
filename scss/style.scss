@@ -431,8 +431,8 @@ body{
     }
     .swiper-slide {
         position: relative;
-        @include adaptiv-slidercard-with(400, 200);
-        @include adaptiv-slidercard-height(500,320);
+        @include adaptiv-slidercard-with(400, 205);
+        @include adaptiv-slidercard-height(500,370);
         &__box{
             position: absolute;
             bottom: 100px;

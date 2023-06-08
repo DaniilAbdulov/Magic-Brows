@@ -580,22 +580,22 @@ body {
 }
 @media (max-width: 767px) {
   .swiper .swiper-slide {
-    max-width: calc(200px + 340 * ((100vw - 320px) / 1280));
+    max-width: calc(205px + 331.5 * ((100vw - 320px) / 1280));
   }
 }
 @media (min-width: 767px) {
   .swiper .swiper-slide {
-    max-width: calc(200px + 340 * (100vw / 1280));
+    max-width: calc(205px + 331.5 * (100vw / 1280));
   }
 }
 @media (max-width: 767px) {
   .swiper .swiper-slide {
-    max-height: calc(320px + 306 * ((100vw - 320px) / 1280));
+    max-height: calc(370px + 221 * ((100vw - 320px) / 1280));
   }
 }
 @media (min-width: 767px) {
   .swiper .swiper-slide {
-    max-height: calc(320px + 306 * (100vw / 1280));
+    max-height: calc(370px + 221 * (100vw / 1280));
   }
 }
 .swiper .swiper-slide__box {
