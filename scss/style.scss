@@ -60,28 +60,6 @@ $maxWidth:1280;
         top: calc(#{$mobSize + px} + #{$addMobSize} * (100vw / #{$maxWidth}));
     }
 }
-@mixin adaptiv-slidercard-with($pcSize, $mobSize){
-    $addSize: $pcSize - $mobSize;
-    $addMobSize: $addSize + $addSize * 0.7;
-    @media (max-width:767px) {
-        max-width: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
-    }
-    @media (min-width:767px) {
-        max-width: calc(#{$mobSize + px} + #{$addMobSize} * (100vw / #{$maxWidth}));
-    }
-}
-@mixin adaptiv-slidercard-height($pcSize, $mobSize){
-    $addSize: $pcSize - $mobSize;
-    $addMobSize: $addSize + $addSize * 0.7;
-    @media (max-width:767px) {
-        max-height: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
-    }
-    @media (min-width:767px) {
-        max-height: calc(#{$mobSize + px} + #{$addMobSize} * (100vw / #{$maxWidth}));
-    }
-}
-
-
 
 @font-face {
     
@@ -431,8 +409,9 @@ body{
     }
     .swiper-slide {
         position: relative;
-        @include adaptiv-slidercard-with(400, 205);
-        @include adaptiv-slidercard-height(500,370);
+
+        max-width: 500px;
+        max-height: 700px; 
         &__box{
             position: absolute;
             bottom: 100px;
@@ -456,6 +435,24 @@ body{
             width: 100%;
             object-fit: cover;
             border-radius: 5px;
+        }
+    }
+    @media (max-width:767px) {
+        .swiper-slide{
+            max-width: 310px;
+            max-height: 510px; 
+        }
+    }
+    @media (max-width:422px) {
+        .swiper-slide{
+            max-width: 270px;
+            max-height: 470px; 
+        }
+    }
+    @media (max-width:374px) {
+        .swiper-slide{
+            max-width: 230px;
+            max-height: 430px; 
         }
     }
 

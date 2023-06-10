@@ -577,26 +577,8 @@ body {
 }
 .swiper .swiper-slide {
   position: relative;
-}
-@media (max-width: 767px) {
-  .swiper .swiper-slide {
-    max-width: calc(205px + 331.5 * ((100vw - 320px) / 1280));
-  }
-}
-@media (min-width: 767px) {
-  .swiper .swiper-slide {
-    max-width: calc(205px + 331.5 * (100vw / 1280));
-  }
-}
-@media (max-width: 767px) {
-  .swiper .swiper-slide {
-    max-height: calc(370px + 221 * ((100vw - 320px) / 1280));
-  }
-}
-@media (min-width: 767px) {
-  .swiper .swiper-slide {
-    max-height: calc(370px + 221 * (100vw / 1280));
-  }
+  max-width: 500px;
+  max-height: 700px;
 }
 .swiper .swiper-slide__box {
   position: absolute;
@@ -619,6 +601,24 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
+}
+@media (max-width: 767px) {
+  .swiper .swiper-slide {
+    max-width: 310px;
+    max-height: 510px;
+  }
+}
+@media (max-width: 422px) {
+  .swiper .swiper-slide {
+    max-width: 270px;
+    max-height: 470px;
+  }
+}
+@media (max-width: 374px) {
+  .swiper .swiper-slide {
+    max-width: 230px;
+    max-height: 430px;
+  }
 }
 
 @media (max-width: 767px) {
