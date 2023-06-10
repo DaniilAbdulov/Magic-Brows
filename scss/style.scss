@@ -480,3 +480,125 @@ body{
         @include adaptiv-font(23,14 )
     }
 }
+
+.form {
+    margin: 0px 0px 50px 0px;
+    position: relative;
+    z-index: 0;
+    .form__title {
+        @include adaptiv-font(45, 25);
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin: 0px 0px 50px 0px;
+        position: relative;
+        z-index: 1;
+    }
+    .form__circle{
+        position: absolute;
+        @include adaptiv-positionTop(-20,-15);
+        @include adaptiv-position(45,21);
+        @include adaptiv-circle(110, 70);
+        z-index: -1;
+        img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+    }
+    @media (max-width:767px){
+        .form__title{
+            margin: $marginMobile;
+        }
+    }
+
+    .form__body {
+        padding: 0 20px;
+        display: flex;
+        gap: 20px;
+    }
+    .form__logo {
+        flex: 1 0 50%;
+        position: relative;
+        min-height: $heightPrice;
+        img{
+            border-radius: 5px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 0 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .form__content {
+        flex: 1 0 50%;
+        padding: 5px;
+    }
+    @media (max-width:713px) {
+        .form__content {
+            position: relative;
+            z-index: 120;
+            text-align: center;
+            &::before{
+                content: '';
+                background-image: url('../img/kamila.JPG'); 
+                position: absolute; 
+                background-size: cover;
+                top: 0; 
+                left: 0; 
+                width: 100%; 
+                height: 100%; 
+                opacity: 0.3; 
+                z-index: -1;
+            }
+            
+        }
+        .form__logo{
+            display: none;
+        }
+    }
+}
+.feedback {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .feedback__text {
+        margin: 0px 0px 10px 0px;
+        @include adaptiv-font(16, 14);
+        letter-spacing: 2px;
+        line-height: 20px;
+    }
+    .feedback__forma {
+
+    }
+    .feedback__message{
+        letter-spacing: 2px;
+    }
+    .feedback__items {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .feedback__item {
+        padding: 5px;
+        opacity: 0.5;
+        &:focus{
+            opacity: 1;
+        }
+    }
+    .feedback__buttom{
+        opacity: 1;
+        max-width: 100px;
+        padding: 5px 15px;
+        margin: 0 auto;
+        span{
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+        }
+    }
+}
+textarea{
+    resize: none;
+}
