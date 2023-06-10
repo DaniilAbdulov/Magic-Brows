@@ -311,6 +311,7 @@ body{
         position: relative;
         min-height: $heightPrice;
         img{
+            border-radius: 5px;
             width: 100%;
             height: 100%;
             object-fit: cover;
