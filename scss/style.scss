@@ -72,7 +72,8 @@ $maxWidth:1280;
 
 html{
     font-family: Gilroy, "Helvetica Neue", Helvetica, sans-serif;
-    color: #fff
+    color: #fff;
+    scroll-behavior: smooth;
 }
 body{
     background: #121212;
@@ -511,12 +512,13 @@ body{
         }
     }
 
-    .form__body {
+    &__body {
         padding: 0 20px;
         display: flex;
         gap: 20px;
+
     }
-    .form__logo {
+    &__logo {
         flex: 1 0 50%;
         position: relative;
         min-height: $heightPrice;
@@ -531,9 +533,26 @@ body{
             left: 0;
         }
     }
-    .form__content {
+    &__content {
         flex: 1 0 50%;
         padding: 5px;
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(18, 18, 18, 0.9) url(../img/giphy.gif) center / 50px no-repeat;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease 0s;
+        }
+        &._sending::after{
+            opacity: 1;
+            visibility: visible;
+        }
     }
     @media (max-width:713px) {
         .form__content {
@@ -586,6 +605,7 @@ body{
         &:focus{
             opacity: 1;
         }
+
     }
     .feedback__buttom{
         opacity: 1;
@@ -603,4 +623,10 @@ body{
 }
 textarea{
     resize: none;
+}
+.form__input{
+    &._error{
+        box-shadow: 0 0 15px red;
+        opacity: 1;
+    }
 }

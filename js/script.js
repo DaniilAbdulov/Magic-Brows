@@ -1,31 +1,8 @@
+'use strict'
 gsap.from('.full-screen__title', {opacity:0, delay:0.5,y:30})
 gsap.from('.full-screen__text', {opacity:0, delay:1,y:-30})
 gsap.from('.full-screen__link', {opacity:0, delay:1.5,y:60})
 
-var linkNav = document.querySelectorAll('[href^="#portfolio"]'),
-    V = 0.4;  // скорость, может иметь дробное значение через точку
-for (var i = 0; i < linkNav.length; i++) {
-  linkNav[i].addEventListener('click', function(e) {
-    e.preventDefault();
-    var w = window.pageYOffset,  // прокрутка
-        hash = this.href.replace(/[^#]*(.*)/, '$1');  // id элемента, к которому нужно перейти
-        t = document.querySelector(hash).getBoundingClientRect().top,  // отступ от окна браузера до id
-        start = null;
-        console.log(t)
-    requestAnimationFrame(step);  // подробнее про функцию анимации [developer.mozilla.org]
-    function step(time) {
-      if (start === null) start = time;
-      var progress = time - start,
-          r = (t < 0 ? Math.max(w - progress/V, w + t) : Math.min(w + progress/V, w + t));
-      window.scrollTo(0,r);
-      if (r != w + t) {
-        requestAnimationFrame(step)
-      } else {
-        location.hash = hash  // URL с хэшем
-      }
-    }
-  }, false);
-}
 
 
 
@@ -42,4 +19,94 @@ let now = date.getFullYear() + '-'+ month + '-'+ day + 'T'+ hour + ':'+ minute;
 dateControl.value = now;
 dateControl.min = now;
 
+
+
+
+
+document.addEventListener('DOMContentLoaded', function (){
+  const form = document.getElementById('form');
+  form.addEventListener('submit', formSend);
+
+
+  async function formSend(e){
+    e.preventDefault();
+
+    let error = formValidate(form);
+
+    let formData = new FormData(form);
+
+
+    if(error === 0){
+
+    form.classList.add('_sending')
+    alert('Идет отправка')
+    // let response = await fetch('sendmail.php',{
+    //   method:'POST',
+    //   body:formData
+    // });
+    // if(response.ok){
+    //   let result = await response.json();
+    //   alert(result.message);
+    //   formPreview.innerHTML = '';
+    //   form.reset();
+    // }else{
+
+    // }
+
+
+    }else{
+      alert('В подсвеченном поле некоректные данные')
+    }
+
+  }
+  function formValidate(form){
+      let error = 0;
+      let formReq = document.querySelectorAll('._req');
+
+      for(let i = 0; i < formReq.length; i++){
+        const input = formReq[i];
+        formRemoveError(input);
+
+        if(input.classList.contains('_name')){
+          if (nameTest(input)){
+            formAddError(input);
+            error++
+          }
+        }else if (input.classList.contains('_telephone')){
+          if (telephoneTest(input)){
+            formAddError(input);
+            error++
+           }
+        }else {
+          if(input.value === ''){
+            formAddError(input);
+            error++
+          }
+        }
+      }
+      return error;
+  }
+
+
+
+    function formAddError(input){
+      input.parentElement.classList.add('_error');
+      input.classList.add('_error');
+    }
+    function formRemoveError(input){
+      input.parentElement.classList.remove('_error');
+      input.classList.remove('_error');
+    }
+    function nameTest(input) {
+      return !(/^[\.\,\-\_\'\"\@\?\!\:\$ А-Яа-я()]/.test(input.value));  // IE > 9
+    }
+    function telephoneTest(input){
+      return !(/^([^\d]*?\d){10,11}$/.test(input.value)); 
+    }
+
+
+  
+
+
+})
 

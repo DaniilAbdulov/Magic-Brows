@@ -139,6 +139,7 @@ h1, h2, h3, h4, h5, h6 {
 html {
   font-family: Gilroy, "Helvetica Neue", Helvetica, sans-serif;
   color: #fff;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -725,17 +726,17 @@ body {
     margin: 0px 0px 30px 0px;
   }
 }
-.form .form__body {
+.form__body {
   padding: 0 20px;
   display: flex;
   gap: 20px;
 }
-.form .form__logo {
+.form__logo {
   flex: 1 0 50%;
   position: relative;
   min-height: 400px;
 }
-.form .form__logo img {
+.form__logo img {
   border-radius: 5px;
   width: 100%;
   height: 100%;
@@ -747,9 +748,26 @@ body {
   top: 0;
   left: 0;
 }
-.form .form__content {
+.form__content {
   flex: 1 0 50%;
   padding: 5px;
+  position: relative;
+}
+.form__content::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(18, 18, 18, 0.9) url(../img/giphy.gif) center/50px no-repeat;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease 0s;
+}
+.form__content._sending::after {
+  opacity: 1;
+  visibility: visible;
 }
 @media (max-width: 713px) {
   .form .form__content {
@@ -825,4 +843,9 @@ body {
 
 textarea {
   resize: none;
+}
+
+.form__input._error {
+  box-shadow: 0 0 15px red;
+  opacity: 1;
 }
