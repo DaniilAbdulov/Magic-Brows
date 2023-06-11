@@ -37,21 +37,22 @@ document.addEventListener('DOMContentLoaded', function (){
 
 
     if(error === 0){
-
-    form.classList.add('_sending')
-    alert('Идет отправка')
-    // let response = await fetch('sendmail.php',{
-    //   method:'POST',
-    //   body:formData
-    // });
-    // if(response.ok){
-    //   let result = await response.json();
-    //   alert(result.message);
-    //   formPreview.innerHTML = '';
-    //   form.reset();
-    // }else{
-
-    // }
+    const load = document.getElementById('load');
+    load.classList.add('_sending');
+    let response = await fetch('sendmail.php',{
+      method:'POST',
+      body:formData
+    });
+    if(response.ok){
+      let result = await response.json();
+      alert(result.message);
+      formPreview.innerHTML = '';
+      form.reset();
+      load.classList.remove('_sending');
+    }else{
+      alert('Ошибка');
+      load.classList.add('_sending');
+    }
 
 
     }else{
