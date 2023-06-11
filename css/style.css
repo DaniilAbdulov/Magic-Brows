@@ -814,6 +814,7 @@ body {
   max-width: 100px;
   padding: 5px 15px;
   margin: 0 auto;
+  background-color: #fff;
 }
 .feedback .feedback__buttom span {
   text-transform: uppercase;
