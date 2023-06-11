@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function (){
       form.reset();
       load.classList.remove('_sending');
     }else{
-      alert('Ошибка');
+      // alert('Ошибка');
       load.classList.remove('_sending');
     }
 
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function (){
       return !(/^[\.\,\-\_\'\"\@\?\!\:\$ А-Яа-я()]/.test(input.value));  // IE > 9
     }
     function telephoneTest(input){
-      return !(/^([^\d]*?\d){10,11}$/.test(input.value)); 
+      return !(/^([^\d]*?\d){10,15}$/.test(input.value)); 
     }
 
 

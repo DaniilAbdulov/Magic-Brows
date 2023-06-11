@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <!-- <div class="full-screen">
+        <div class="full-screen">
             <div class="full-screen__body">
                 <div class="full-screen__title">KAMILA SHAYAKHMETOVA</div>
                 <div class="full-screen__text">Magic Brows</div>
@@ -23,10 +23,10 @@
             <div class="full-screen__photo">
                 <img src="" alt="">
             </div>
-        </div> -->
+        </div>
         <div class="container">
-            <!-- <div class="content">
-                <div class="about block">
+            <div class="content">
+                <div class="about block" id="about">
                     <div class="about__title block__title">
                         About me
                     </div>
@@ -63,7 +63,7 @@
                           
                     </div>
                 </div>
-                <div class="price block">
+                <div class="price block" id="price">
                     <div class="price__title block__title wow fadeInLeft">Price</div>
                     <div class="price__circle block__title-circle circle wow fadeInRight"></div>
                     <div class="price__body">
@@ -121,8 +121,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper mySwiper">
-                    <div class="swiper__title wow fadeInLeft">My works</div>
+                <div class="swiper mySwiper" id="myworks">
+                    <div class="swiper__title wow fadeInLeft block__title">My works</div>
                     <div class="swiper-wrapper wow fadeIn">
                       <div class="swiper-slide">
                         <div class="swiper-slide__box box">
@@ -188,9 +188,9 @@
                         <img src="./img/kamila.JPG" alt="">
                       </div>
                     </div>
-                </div> -->
+                </div>
                 <div class="form">
-                    <div class="form__title block__title  wow fadeInLeft">Form
+                    <div class="form__title block__title wow fadeInLeft">Form
                         <div class="form__circle">
                             <img src="./img/circle.png" alt="">
                         </div>
@@ -205,7 +205,7 @@
                                 <form action="#"  id="form" class="feedback__items">
                                     <input type="text" class="feedback__item _req _name form__input" name="name" placeholder="Твоё имя">
                                     <input type="tel" class="feedback__item _req _telephone form__input" name="phone" placeholder="8 (999) 999 99 99">
-                                    <textarea name="" id="" cols="30" rows="10" class="feedback__item _req form__input" name="message" placeholder="Желаемая процедура или сообщение..."></textarea>
+                                    <textarea id="" cols="30" rows="10" class="feedback__item _req form__input" name="message" placeholder="Желаемая процедура или сообщение..."></textarea>
                                     <div class="feedback__message">Можешь выбрать желаемую дату и время</div>
                                     <input type="datetime-local" class="feedback__item" name="datetime">
                                     <button type="submit" class="feedback__item feedback__buttom" ><span>send</span></button>
@@ -215,9 +215,38 @@
                     </div>
                 </div>
 
-
             </div>
         </div>
+        <footer>
+         <div class="foot">
+             <div class="foot_columns">
+                 <div class="foot__column foco">
+                     <div class="foco__title foot__title">Navigation</div>
+                     <ul class="foco__list">
+                         <li class="foco__link"><a href="#about">About</a></li>
+                         <li class="foco__link"><a href="#portfolio">Portfolio</a></li>
+                         <li class="foco__link"><a href="#price">Price</a></li>
+                         <li class="foco__link"><a href="#myworks">My works</a></li>
+                     </ul>
+                 </div>
+                 <div class="foot__column middle">
+                     <ul class="middle__list">
+                         <li class="middle__link"><a href="">здесь</a></li>
+                         <li class="middle__link"><a href="">будут</a></li>
+                         <li class="middle__link"><a href="">иконки</a></li>
+                         <li class="middle__link"><a href="">соцесетей</a></li>
+                     </ul>
+                 </div>
+                 <div class="foot__column right">
+                     <div class="foco__title foot__title">Address</div>
+                     <ul class="right__list">
+                         <li class="right__link"><a href="https://yandex.ru/maps/11176/tyumen-oblast/?ll=67.063953%2C57.399082&mode=routes&rtext=57.402417%2C67.070124~57.399192%2C67.062039&rtt=pd&ruri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1MzE1OTMyMxJG0KDQvtGB0YHQuNGPLCDQotGO0LzQtdC90YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINGB0LXQu9C-INCv0YDQutC-0LLQviIKDecjhkIVE5xlQg%2C%2C~ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoyMTU5NjY5NTQ4EmrQoNC-0YHRgdC40Y8sINCi0Y7QvNC10L3RgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0YHQtdC70L4g0K_RgNC60L7QstC-LCDRg9C70LjRhtCwINCg0LXRgdC_0YPQsdC70LjQutC4LCA3IgoNxB-GQhXGmGVC&z=17.69" target="_blank" class="a_adress">с.Ярково, ул.Республики, д.7/2</a></li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+        </footer>
+
    </div>
     <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
