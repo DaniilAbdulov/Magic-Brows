@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function (){
       load.classList.remove('_sending');
     }else{
       alert('Ошибка');
-      load.classList.add('_sending');
+      load.classList.remove('_sending');
     }
 
 
