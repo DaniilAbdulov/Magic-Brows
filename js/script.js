@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function (){
       form.reset();
       load.classList.remove('_sending');
     }else{
-      // alert('Ошибка');
+      alert('Ошибка');
       load.classList.remove('_sending');
     }
 
