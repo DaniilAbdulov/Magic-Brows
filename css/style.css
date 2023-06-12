@@ -85,6 +85,10 @@ body {
   background: #121212;
 }
 
+textarea {
+  resize: none;
+}
+
 .wrapper {
   min-height: 100vh;
   display: flex;
@@ -504,31 +508,31 @@ body {
 }
 
 .box .box__title {
-  margin: 0px 0px 10px 0px;
+  margin-bottom: 10px;
 }
 @media (max-width: 767px) {
   .box .box__title {
-    font-size: calc(30px + 34 * ((100vw - 320px) / 1280));
+    font-size: calc(30px + 17 * ((100vw - 320px) / 1280));
   }
 }
 @media (min-width: 767px) {
   .box .box__title {
-    font-size: calc(30px + 34 * (100vw / 1280));
+    font-size: calc(30px + 17 * (100vw / 1280));
   }
 }
 @media (max-width: 767px) {
   .box .box__title {
-    margin: 0px 0px 6px 0px;
+    margin-bottom: 6px;
   }
 }
 @media (max-width: 767px) {
   .box .box__text {
-    font-size: calc(14px + 15.3 * ((100vw - 320px) / 1280));
+    font-size: calc(14px + 6.8 * ((100vw - 320px) / 1280));
   }
 }
 @media (min-width: 767px) {
   .box .box__text {
-    font-size: calc(14px + 15.3 * (100vw / 1280));
+    font-size: calc(14px + 6.8 * (100vw / 1280));
   }
 }
 
@@ -703,10 +707,6 @@ body {
 }
 .feedback .feedback__buttom:active {
   background-color: #333333;
-}
-
-textarea {
-  resize: none;
 }
 
 .form__input._error {

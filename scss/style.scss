@@ -77,7 +77,9 @@ html{
 body{
     background: #121212;
 }
-
+textarea{
+    resize: none;
+}
 .wrapper {
     min-height: 100vh;
     display: flex;
@@ -424,17 +426,17 @@ body{
 .box {
     
     .box__title {
-        margin: 0px 0px 10px 0px;
-        @include adaptiv-font(50,30 );
+        margin-bottom:10px;
+        @include adaptiv-font(40,30 );
 
     }
     @media (max-width:767px){
         .box__title{
-            margin: 0px 0px 6px 0px;
+            margin-bottom: 6px;
         }
     }
     .box__text {
-        @include adaptiv-font(23,14 )
+        @include adaptiv-font(18,14 )
     }
 }
 
@@ -574,9 +576,7 @@ body{
         }
     }
 }
-textarea{
-    resize: none;
-}
+
 .form__input{
     &._error{
         
@@ -622,10 +622,9 @@ footer{
         margin-bottom: 10px;
         }
         @media (max-width:767px) {
-                li{
-    
-                    margin-bottom: 0px;
-                }
+            li{
+                margin-bottom: 0px;
+            }
         }
     }
     .foco__link {
