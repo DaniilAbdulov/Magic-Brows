@@ -100,9 +100,9 @@ textarea{
         position: relative;
         z-index: 2;
         display: flex;
-        flex: 1 1 auto;
         justify-content: center;
         align-items: center;
+        flex: 1;
         flex-direction: column;
         
     }
@@ -113,14 +113,14 @@ textarea{
         @include adaptiv-font(60, 28);
         @include adaptiv-letter-space(12, 5);
         font-weight: 700;
-        margin: 0px 0px 30px 0px;
+        margin-bottom: 30px;
     }
     .full-screen__text {
         font-family: 'Bang', "Helvetica Neue", Helvetica, sans-serif;
         text-align: center;
         @include adaptiv-font(100, 55);
         letter-spacing: 10px;
-        margin: 0px 0px 30px 0px;
+        margin-bottom: 30px;
     }
     .full-screen__photo {
         position: absolute;
@@ -151,27 +151,27 @@ textarea{
 .about {
     
     
-    .about__body {
+    &__body {
         gap: 10px;
     }
     @media (max-width:767px) {
-        .about__body {
+        &__body {
             flex-direction: column;
         }
     }
-    .about__text {
+    &__text {
         margin: 0px 0px 10px 0px;
     }
 
-    .about__text {
+    &__text {
     }
-    .about_image {
+    &_image {
         img{
             border-radius: 0px 40px 0px 40px;
         }
 
     }
-    .about__circle{
+    &__circle{
     top: 5px;
     @include adaptiv-position(190, 110)
     }
@@ -199,15 +199,15 @@ textarea{
         z-index: -1;
     }
     
-    .block__body {
+    &__body {
         display: flex;
     }
     
-    .block__text {
+    &__text {
         @include adaptiv-font(23, 14);
     }
     
-    .block__image {
+    &__image {
         flex: 1 0 50%;
         max-width: 100%;
         img{
@@ -228,42 +228,42 @@ textarea{
 //==========================================================================================================================
 .portfolio {
 
-    .portfolio__circle {
+    &__circle {
         top: 5px;
         @include adaptiv-position(150, 80)
     }
 
-}
-
-.portfolio__items {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-@media (max-width:431px) {
-    .portfolio__items{
-
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    &__items {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    @media (max-width:431px) {
+        .portfolio__items{
+    
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+    }
+    @media (max-width:352px) {
+        .portfolio__items{
+    
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        }
+    }
+    &__item {
+      
+        img{
+            border-radius: 10px;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    .portfolio__item-big{
+        grid-column: span 2;
+        grid-row: span 2;
     }
 }
-@media (max-width:352px) {
-    .portfolio__items{
 
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-}
-.portfolio__item {
-  
-    img{
-        border-radius: 10px;
-        width: 100%;
-        object-fit: cover;
-    }
-}
-.portfolio__item-big{
-    grid-column: span 2;
-    grid-row: span 2;
-}
 
 @media (min-width:1339px) {
     .last_item{
@@ -273,19 +273,19 @@ textarea{
  //==========================================================================================================================
 
 .price {
-    .price__circle {
+    &__circle {
         top: 3px;
         @include adaptiv-position(20, 45)
     }
-    .price__body {
+    &__body {
         padding: 0 20px;
         display: flex;
         gap: 20px;
     }
-    .price__table {
+    &__table {
         flex: 1 0 50%;
     }
-    .price__image{
+    &__image{
         flex: 1 0 50%;
         position: relative;
         min-height: $heightPrice;
@@ -329,14 +329,14 @@ textarea{
     padding: 10px;
     border: 1px solid #fff;
 
-    .table__items {
+    &__items {
         display:flex;
         flex-direction:column;
         height: $heightPrice;
         justify-content: space-between;
 
     }
-    .table__item {
+    &__item {
         @include adaptiv-font(14, 12);
         display: flex;
         justify-content: space-between;
@@ -345,17 +345,16 @@ textarea{
         padding-bottom: 3px;
         margin: 0px 0px 10px 0px;
     }
-    .table__item-label {
+    &__item-label {
         padding-right: 3px;
     }
-    .table__item-price {
-    }
+
 }
 //====================================================
 
 
 .swiper {
-    .swiper__title {
+    &__title {
 
         &::before{
             content: '';
@@ -369,10 +368,8 @@ textarea{
             z-index: -1;
         }
     }
-   
-    .swiper-wrapper {
-    }
-    .swiper-slide {
+
+    &-slide {
         position: relative;
 
         max-width: 500px;
@@ -425,7 +422,7 @@ textarea{
 
 .box {
     
-    .box__title {
+    &__title {
         margin-bottom:10px;
         @include adaptiv-font(40,30 );
 
@@ -435,7 +432,7 @@ textarea{
             margin-bottom: 6px;
         }
     }
-    .box__text {
+    &__text {
         @include adaptiv-font(18,14 )
     }
 }
@@ -443,11 +440,11 @@ textarea{
 .form {
     position: relative;
     z-index: 0;
-    .form__title {
+    &__title {
         position: relative;
         z-index: 1;
     }
-    .form__circle{
+    &__circle{
         position: absolute;
         @include adaptiv-positionTop(-20,-15);
         @include adaptiv-position(45,21);
@@ -520,7 +517,7 @@ textarea{
             }
             
         }
-        .form__logo{
+        &__logo{
             display: none;
         }
     }
@@ -529,24 +526,21 @@ textarea{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    .feedback__text {
+    &__text {
         margin: 0px 0px 10px 0px;
         @include adaptiv-font(16, 14);
         letter-spacing: 2px;
         line-height: 20px;
     }
-    .feedback__forma {
-
-    }
-    .feedback__message{
+    &__message{
         letter-spacing: 2px;
     }
-    .feedback__items {
+    &__items {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
-    .feedback__item {
+    &__item {
         padding: 5px;
         opacity: 0.5;
         &:focus{
@@ -554,7 +548,7 @@ textarea{
         }
 
     }
-    .feedback__buttom{
+    &__buttom{
         opacity: 1;
         max-width: 100px;
         padding: 5px 15px;
@@ -594,18 +588,16 @@ footer{
 }
 .foot {
     
-    .foot_columns {
+    &_columns {
         display: flex;
         gap: 10px;
     }
-    .foot__column {
-    }
-    .foot__title{
-        margin: 0px 0px 10px 0px;
+    &__title{
+        margin-bottom:10px;
         @include adaptiv-font(18, 12)
     }
     @media (max-width:767px) {
-        .foot__title{
+        &__title{
             margin-bottom: 3px;
         }
     }
@@ -614,10 +606,7 @@ footer{
     flex: 0 1 25%;
     display: flex;
     flex-direction: column;
-    .foco__title {
-
-    }
-    .foco__list {
+    &__list {
         li{
         margin-bottom: 10px;
         }
@@ -627,7 +616,7 @@ footer{
             }
         }
     }
-    .foco__link {
+    &__link {
         a{
             color: #fff;
             @include adaptiv-font(10, 6)
@@ -654,11 +643,11 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    .middle__list {
+    &__list {
         display: flex;
         gap: 15px;
     }
-    .middle__link {
+    &__link {
         a{
         font-size: 10px;
         color: #fff;
@@ -666,7 +655,7 @@ footer{
     }
     @media (max-width:767px) {
     
-        .middle__list {
+        &__list {
             display: flex;
             gap: 20px;
         }
@@ -678,11 +667,9 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    .right__list {
+    &__list {
         text-align: right;
         padding-left: 0px;
-    }
-    .right__link {
     }
 }
 .a_adress{

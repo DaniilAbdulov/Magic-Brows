@@ -3,7 +3,17 @@ gsap.from('.full-screen__title', {opacity:0, delay:0.5,y:30})
 gsap.from('.full-screen__text', {opacity:0, delay:1,y:-30})
 gsap.from('.full-screen__link', {opacity:0, delay:1.5,y:60})
 
+// document.body.style.display = 'none';
+// var loader = document.createElement('div');
+// loader.style.display = 'block';
+// loader.innerText = 'Loading...';
+// document.body.appendChild(loader);
 
+// window.onload = function() {
+//     loader.style.display = 'none';
+//     document.body.style.display = 'block';
+
+// }
 
 
 const dateControl = document.querySelector('input[type="datetime-local"]');
@@ -35,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
       load.classList.add('_sending');
       console.log('1');
 
-      fetch('server-file.php', {
+      fetch('sendmail.php', {
         method: 'POST',
         body: new FormData(form)
       })
