@@ -16,17 +16,10 @@ gsap.from('.full-screen__link', {opacity:0, delay:1.5,y:60})
 // }
 
 
-const dateControl = document.querySelector('input[type="datetime-local"]');
-let date = new Date(Date.now());
-function normalFormat(value){
-  return value < 10 ? '0' + value : value;
-}
-let month = normalFormat(date.getMonth()+1);
-let day = normalFormat(date.getDate());
-let hour = normalFormat(date.getHours());
-let minute = normalFormat(date.getMinutes());
-let now = date.getFullYear() + '-'+ month + '-'+ day + 'T'+ hour + ':'+ minute;
-dateControl.value = now;
+
+const dateControl = document.querySelector('input[type="datetime-local"]'); 
+const now = new Date().toISOString().slice(0, 16); 
+dateControl.value = now; 
 dateControl.min = now;
 
 
