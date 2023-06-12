@@ -717,7 +717,7 @@ footer{
     
             .middle__list {
                 display: flex;
-                gap: 10px;
+                gap: 20px;
             }
     
     }
@@ -738,5 +738,5 @@ footer{
     text-decoration: underline;
     color: white;
     letter-spacing: 1px;
-    @include adaptiv-font(10, 8)
+    font-size: 12px;
 }

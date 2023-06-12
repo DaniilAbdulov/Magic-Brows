@@ -861,7 +861,7 @@ footer {
 @media (max-width: 767px) {
   .middle .middle__list {
     display: flex;
-    gap: 10px;
+    gap: 20px;
   }
 }
 
@@ -879,14 +879,5 @@ footer {
   text-decoration: underline;
   color: white;
   letter-spacing: 1px;
-}
-@media (max-width: 767px) {
-  .a_adress {
-    font-size: calc(8px + 3.4 * ((100vw - 320px) / 1280));
-  }
-}
-@media (min-width: 767px) {
-  .a_adress {
-    font-size: calc(8px + 3.4 * (100vw / 1280));
-  }
+  font-size: 12px;
 }
