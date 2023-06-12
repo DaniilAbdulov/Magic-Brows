@@ -13,17 +13,28 @@
 [class^="_icon-"]::before, [class*=" _icon-"]::before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
   font-size: 20px;
-
+  
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+
+@media (max-width: 767px) {
+  [class^="_icon-"]::before, [class*=" _icon-"]::before{
+    font-size: calc(14px + 3.4 * ((100vw - 320px) / 1280));
+  }
+}
+@media (min-width: 767px) {
+  [class^="_icon-"]::before, [class*=" _icon-"]::before {
+    font-size: calc(20px + 3.4 * (100vw / 1280));
+  }
 }
 
 ._icon-instagram:before {

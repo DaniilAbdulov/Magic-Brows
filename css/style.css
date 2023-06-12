@@ -775,12 +775,13 @@ textarea {
 
 footer {
   background-color: #4E0E1F;
-  padding: 20px 40px;
+  padding: 20px;
+  width: 100%;
 }
 
 .foot .foot_columns {
   display: flex;
-  padding: 0 5px;
+  gap: 10px;
 }
 .foot .foot__title {
   margin: 0px 0px 10px 0px;
@@ -829,6 +830,20 @@ footer {
   }
 }
 
+@media (max-width: 767px) {
+  .foco {
+    display: none;
+  }
+  .foot__title {
+    display: none;
+  }
+  .foot_columns {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
 .middle {
   flex: 1 0 auto;
   display: flex;
@@ -843,6 +858,12 @@ footer {
   font-size: 10px;
   color: #fff;
 }
+@media (max-width: 767px) {
+  .middle .middle__list {
+    display: flex;
+    gap: 10px;
+  }
+}
 
 .right {
   flex: 0 1 auto;
@@ -852,18 +873,20 @@ footer {
 }
 .right .right__list {
   text-align: right;
+  padding-left: 0px;
 }
 .a_adress {
   text-decoration: underline;
   color: white;
+  letter-spacing: 1px;
 }
 @media (max-width: 767px) {
   .a_adress {
-    font-size: calc(6px + 6.8 * ((100vw - 320px) / 1280));
+    font-size: calc(8px + 3.4 * ((100vw - 320px) / 1280));
   }
 }
 @media (min-width: 767px) {
   .a_adress {
-    font-size: calc(6px + 6.8 * (100vw / 1280));
+    font-size: calc(8px + 3.4 * (100vw / 1280));
   }
 }
