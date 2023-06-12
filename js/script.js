@@ -56,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (error === 0) {
       load.classList.add('_sending');
-      console.log('1');
 
       fetch('sendmail.php', {
         method: 'POST',
@@ -64,20 +63,17 @@ document.addEventListener('DOMContentLoaded', function () {
       })
         .then(response => {
           if (response.ok) {
-            console.log('2');
             return response.json();
           } else {
             throw new Error('Network response was not ok.');
           }
         })
         .then(result => {
-          console.log('3');
-          alert(result.message);
+          alert('Твоя формочка отправлена мне на почту❤️');
           form.reset();
           load.classList.remove('_sending');
         })
         .catch(error => {
-          console.error('4', error);
           alert(error.message);
           load.classList.remove('_sending');
         });
