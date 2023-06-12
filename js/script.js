@@ -3,17 +3,36 @@ gsap.from('.full-screen__title', {opacity:0, delay:0.5,y:30})
 gsap.from('.full-screen__text', {opacity:0, delay:1,y:-30})
 gsap.from('.full-screen__link', {opacity:0, delay:1.5,y:60})
 
-// document.body.style.display = 'none';
-// var loader = document.createElement('div');
-// loader.style.display = 'block';
-// loader.innerText = 'Loading...';
-// document.body.appendChild(loader);
+document.body.style.display = 'none';
+var loader = document.createElement('div');
+loader.style.display = 'block';
+loader.innerText = 'Loading...';
+document.body.appendChild(loader);
 
-// window.onload = function() {
-//     loader.style.display = 'none';
-//     document.body.style.display = 'block';
+// Ждем загрузки всех ресурсов
+window.addEventListener('load', function() {
+  // Скрываем прелоадер и показываем содержимое сайта
+  loader.style.display = 'none';
+  document.body.style.display = 'block';
 
-// }
+  // Инициализируем Swiper и WOW.js
+  const swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    loop: true,
+    speed: 1000,
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      depth: 100,
+      modifier: 1,
+      rotate: 50,
+      slideShadows: false,
+      stretch: 0,
+    },
+  });
+  new WOW().init();
+});
 
 
 
