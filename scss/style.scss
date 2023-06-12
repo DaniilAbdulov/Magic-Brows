@@ -147,7 +147,7 @@ body{
 }
 //==========================================================================================================================
 .about {
-    margin: 0px 0px 50px 0px;
+    
     
     .about__body {
         gap: 10px;
@@ -160,13 +160,7 @@ body{
     .about__text {
         margin: 0px 0px 10px 0px;
     }
-    .about__title {
-        margin: 0px 0px 50px 0px;
-    }
-    @media (max-width:767px) {
-    .about__title{
-        margin: $marginMobile;
-    }}
+
     .about__text {
     }
     .about_image {
@@ -182,21 +176,22 @@ body{
 
 
 }
-@media (max-width:767px) {
-    .about{
-        margin: $marginMobile;
-    }
 
-}
 //==========================================================================================================================
 .block {
     position: relative;
     z-index: 10;
+    margin-bottom: 50px;
     &__title {
         @include adaptiv-font(45, 25);
         font-weight: 700;
         letter-spacing: 2px;
+        margin-bottom: 50px;
     }
+    @media (max-width:767px) {
+        &__title{
+            margin: $marginMobile;
+        }}
     .block__title-circle {
         position: absolute;
         z-index: -1;
@@ -219,6 +214,10 @@ body{
         }
     }
 }
+@media (max-width:767px) {
+    .block{
+        margin: $marginMobile;
+    }}
 .circle {
     @include adaptiv-circle(55, 30);
     background-color: $redColor;
@@ -226,27 +225,14 @@ body{
 }
 //==========================================================================================================================
 .portfolio {
-    margin: 0px 0px 50px 0px;
 
-    .portfolio__title {
-        margin: 0px 0px 50px 0px;
-    }
-    @media (max-width:767px) {
-        .portfolio__title{
-            margin: $marginMobile;
-        }
-    }
     .portfolio__circle {
         top: 5px;
         @include adaptiv-position(150, 80)
     }
 
 }
-@media (max-width:767px) {
-    .portfolio{
-        margin: $marginMobile;
-    }
-}
+
 .portfolio__items {
     display: grid;
     gap: 10px;
@@ -285,15 +271,6 @@ body{
  //==========================================================================================================================
 
 .price {
-    margin: 0px 0px 50px 0px;
-    .price__title {
-        margin: 0px 0px 50px 0px;
-    }
-    @media (max-width:767px) {
-        .price__title{
-            margin: $marginMobile;
-        }
-    }
     .price__circle {
         top: 3px;
         @include adaptiv-position(20, 45)
@@ -345,11 +322,7 @@ body{
         }
     }
 }
-@media (max-width:767px) {
-    .price{
-        margin: $marginMobile;
-    }
-}
+
 .table {
     padding: 10px;
     border: 1px solid #fff;
@@ -380,9 +353,8 @@ body{
 
 
 .swiper {
-    margin: 0px 0px 50px 0px;
     .swiper__title {
-        margin: 0px 0px 50px 0px;
+
         &::before{
             content: '';
             background-image: url('../img/circle.png'); 
@@ -395,14 +367,7 @@ body{
             z-index: -1;
         }
     }
-    @media (max-width:767px){
-        .swiper__title{
-            margin: $marginMobile;
-        }
-    }
-
-
-    
+   
     .swiper-wrapper {
     }
     .swiper-slide {
@@ -455,11 +420,6 @@ body{
     }
 
 }
-@media (max-width:767px) {
-    .swiper{
-        margin: $marginMobile;
-    }
-}
 
 .box {
     
@@ -479,11 +439,9 @@ body{
 }
 
 .form {
-    margin: 0px 0px 50px 0px;
     position: relative;
     z-index: 0;
     .form__title {
-        margin: 0px 0px 50px 0px;
         position: relative;
         z-index: 1;
     }
@@ -499,12 +457,6 @@ body{
             width: 100%;
         }
     }
-    @media (max-width:767px){
-        .form__title{
-            margin: $marginMobile;
-        }
-    }
-
     &__body {
         padding: 0 20px;
         display: flex;
@@ -635,6 +587,7 @@ textarea{
 
 //===========================
 footer{
+    margin-top: 20px;
     background-color: #4E0E1F;
     padding: 20px;
     width: 100%;
@@ -649,7 +602,6 @@ footer{
     }
     .foot__title{
         margin: 0px 0px 10px 0px;
-        text-align: right;
         @include adaptiv-font(18, 12)
     }
     @media (max-width:767px) {
@@ -659,7 +611,7 @@ footer{
     }
 }
 .foco {
-    flex: 0 1 auto;
+    flex: 0 1 25%;
     display: flex;
     flex-direction: column;
     .foco__title {
@@ -699,7 +651,7 @@ footer{
     }
 }
 .middle {
-    flex: 1 0 auto;
+    flex: 1 0 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -715,15 +667,15 @@ footer{
     }
     @media (max-width:767px) {
     
-            .middle__list {
-                display: flex;
-                gap: 20px;
-            }
+        .middle__list {
+            display: flex;
+            gap: 20px;
+        }
     
     }
 }
 .right {
-    flex: 0 1 auto;
+    flex: 0 1 25%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
