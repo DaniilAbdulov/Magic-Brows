@@ -634,9 +634,12 @@ textarea{
 }
 
 //===========================
-.foot {
+footer{
     background-color: #4E0E1F;
     padding: 20px 40px;
+}
+.foot {
+
     
     .foot_columns {
         display: flex;
@@ -689,7 +692,7 @@ textarea{
     align-items: center;
     .middle__list {
         display: flex;
-        gap: 5px;
+        gap: 15px;
     }
     .middle__link {
         a{
