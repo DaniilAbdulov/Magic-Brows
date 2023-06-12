@@ -665,7 +665,7 @@ body {
 }
 .form__content {
   flex: 1 0 50%;
-  padding: 5px;
+  padding: 15px;
   position: relative;
 }
 .form__content::after {

@@ -11,6 +11,7 @@ $mail->CharSet = 'UTF-8';
 $mail->setLanguage('ru', 'PHPMailer-master\language');
 $mail->IsHTML(true);
 
+$mail->setFrom('webmaster@magicbrows.ru');
 $mail->addAddress('abdulov.dany@yandex.ru');
 $mail->Subject = 'Сообщение с сайта MagicBrows';
 
