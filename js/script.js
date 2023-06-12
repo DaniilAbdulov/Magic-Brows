@@ -21,93 +21,91 @@ dateControl.min = now;
 
 
 
-
-
-document.addEventListener('DOMContentLoaded', function (){
+document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('form');
+  const load = document.getElementById('load');
   form.addEventListener('submit', formSend);
 
-
-  async function formSend(e){
+  function formSend(e) {
     e.preventDefault();
 
-    let error = formValidate(form);
+    const error = formValidate(form);
 
-    let formData = new FormData(form);
+    if (error === 0) {
+      load.classList.add('_sending');
+      console.log('1');
 
-
-    if(error === 0){
-    const load = document.getElementById('load');
-    load.classList.add('_sending');
-    let response = await fetch('sendmail.php',{
-      method:'POST',
-      body:formData
-    });
-    if(response.ok){
-      let result = await response.json();
-      alert(result.message);
-      formPreview.innerHTML = '';
-      form.reset();
-      load.classList.remove('_sending');
-    }else{
-      alert('Ошибка');
-      load.classList.remove('_sending');
+      fetch('server-file.php', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+        .then(response => {
+          if (response.ok) {
+            console.log('2');
+            return response.json();
+          } else {
+            throw new Error('Network response was not ok.');
+          }
+        })
+        .then(result => {
+          console.log('3');
+          alert(result.message);
+          form.reset();
+          load.classList.remove('_sending');
+        })
+        .catch(error => {
+          console.error('4', error);
+          alert(error.message);
+          load.classList.remove('_sending');
+        });
+    } else {
+      alert('В подсвеченном поле некорректные данные');
     }
-
-
-    }else{
-      alert('В подсвеченном поле некоректные данные')
-    }
-
   }
-  function formValidate(form){
-      let error = 0;
-      let formReq = document.querySelectorAll('._req');
 
-      for(let i = 0; i < formReq.length; i++){
-        const input = formReq[i];
-        formRemoveError(input);
+  function formValidate(form) {
+    let error = 0;
+    const formReq = form.querySelectorAll('._req');
 
-        if(input.classList.contains('_name')){
-          if (nameTest(input)){
-            formAddError(input);
-            error++
-          }
-        }else if (input.classList.contains('_telephone')){
-          if (telephoneTest(input)){
-            formAddError(input);
-            error++
-           }
-        }else {
-          if(input.value === ''){
-            formAddError(input);
-            error++
-          }
+    formReq.forEach(input => {
+      formRemoveError(input);
+
+      if (input.classList.contains('_name')) {
+        if (nameTest(input)) {
+          formAddError(input);
+          error++;
+        }
+      } else if (input.classList.contains('_telephone')) {
+        if (telephoneTest(input)) {
+          formAddError(input);
+          error++;
+        }
+      } else {
+        if (input.value === '') {
+          formAddError(input);
+          error++;
         }
       }
-      return error;
+    });
+
+    return error;
   }
 
+  function formAddError(input) {
+    input.parentElement.classList.add('_error');
+    input.classList.add('_error');
+  }
 
+  function formRemoveError(input) {
+    input.parentElement.classList.remove('_error');
+    input.classList.remove('_error');
+  }
 
-    function formAddError(input){
-      input.parentElement.classList.add('_error');
-      input.classList.add('_error');
-    }
-    function formRemoveError(input){
-      input.parentElement.classList.remove('_error');
-      input.classList.remove('_error');
-    }
-    function nameTest(input) {
-      return !(/^[\.\,\-\_\'\"\@\?\!\:\$ А-Яа-я()]/.test(input.value));  // IE > 9
-    }
-    function telephoneTest(input){
-      return !(/^([^\d]*?\d){10,15}$/.test(input.value)); 
-    }
+  function nameTest(input) {
+    return !(/^[^[\].,_'"@?!:$/\\]*[А-Яа-я]/.test(input.value));
+  }
 
-
-  
-
-
-})
-
+  function telephoneTest(input) {
+    return !(/^([^\d]*?\d){10,15}$/.test(input.value));
+  }
+});
