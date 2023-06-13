@@ -1,7 +1,7 @@
 'use strict'
 const wrap = document.querySelector('.wrapper');
 const pop = document.querySelector('.popUp');
-pop.style.display = 'none';
+pop.style.scale = '0';
 const btn = document.getElementById('popbtn');
 
 
@@ -76,13 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(result => {
           wrap.style.opacity = 0.1;
-          pop.style.display = 'flex';
-    
+          pop.style.scale = '1';
     
           btn.addEventListener('click', hidePopUp);
           function hidePopUp(){
             wrap.style.opacity = 1;
-            pop.style.display = 'none'
+            pop.style.scale = '0'
           }
           form.reset();
           load.classList.remove('_sending');
