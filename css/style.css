@@ -93,7 +93,6 @@ textarea {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #121212;
 }
 
 .full-screen {
@@ -372,7 +371,7 @@ textarea {
   }
   .price .price__table::before {
     content: "";
-    background-image: url("../img/kamila.JPG");
+    background-image: url("../img/kamila.webp");
     position: absolute;
     background-size: cover;
     top: 0;
@@ -421,7 +420,7 @@ textarea {
 
 .swiper__title::before {
   content: "";
-  background-image: url("../img/circle.png");
+  background-image: url("../img/circle.webp");
   position: absolute;
   background-size: cover;
   opacity: 1;
@@ -635,7 +634,7 @@ textarea {
   }
   .form .form__content::before {
     content: "";
-    background-image: url("../img/kamila.JPG");
+    background-image: url("../img/kamila.webp");
     position: absolute;
     background-size: cover;
     top: 0;
@@ -820,4 +819,85 @@ footer {
   color: white;
   letter-spacing: 1px;
   font-size: 12px;
+}
+
+.popUp {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: #121212;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px black;
+  transition: all 0.5s ease;
+}
+.popUp__text {
+  margin-bottom: 30px;
+  line-height: 25px;
+}
+@media (max-width: 767px) {
+  .popUp__text {
+    font-size: calc(12px + 10.2 * ((100vw - 320px) / 1280));
+  }
+}
+@media (min-width: 767px) {
+  .popUp__text {
+    font-size: calc(12px + 10.2 * (100vw / 1280));
+  }
+}
+.popUp__image {
+  height: 150px;
+  width: 150px;
+  margin-bottom: 30px;
+}
+.popUp__image img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.popUp__btn {
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .popUp__btn {
+    font-size: calc(10px + 6.8 * ((100vw - 320px) / 1280));
+  }
+}
+@media (min-width: 767px) {
+  .popUp__btn {
+    font-size: calc(10px + 6.8 * (100vw / 1280));
+  }
+}
+
+@media (max-width: 767px) {
+  .popUp {
+    padding: 10px;
+  }
+  .popUp__text {
+    margin-bottom: 15px;
+    line-height: 15px;
+  }
+}
+@media (max-width: 767px) and (max-width: 767px) {
+  .popUp__text {
+    font-size: calc(12px + 10.2 * ((100vw - 320px) / 1280));
+  }
+}
+@media (max-width: 767px) and (min-width: 767px) {
+  .popUp__text {
+    font-size: calc(12px + 10.2 * (100vw / 1280));
+  }
+}
+@media (max-width: 767px) {
+  .popUp__image {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 15px;
+  }
 }

@@ -1,4 +1,8 @@
 'use strict'
+const wrap = document.querySelector('.wrapper');
+const pop = document.querySelector('.popUp');
+pop.style.display = 'none';
+const btn = document.getElementById('popbtn');
 
 
 document.body.style.display = 'none';
@@ -44,6 +48,7 @@ dateControl.min = now;
 
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('form');
   const load = document.getElementById('load');
@@ -65,11 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
           if (response.ok) {
             return response.json();
           } else {
+
             throw new Error('Network response was not ok.');
           }
         })
         .then(result => {
-          alert('Твоя формочка отправлена мне на почту❤️');
+
           form.reset();
           load.classList.remove('_sending');
         })
@@ -78,6 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
           load.classList.remove('_sending');
         });
     } else {
+      wrap.style.opacity = 0.1;
+      pop.style.display = 'flex';
+
+
+      btn.addEventListener('click', hidePopUp);
+      function hidePopUp(){
+        wrap.style.opacity = 1;
+        pop.style.display = 'none'
+      }
+
       alert('В подсвеченном поле некорректные данные');
     }
   }

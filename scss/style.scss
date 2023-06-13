@@ -76,6 +76,7 @@ html{
 }
 body{
     background: #121212;
+
 }
 textarea{
     resize: none;
@@ -84,7 +85,6 @@ textarea{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: #121212;
 }
 
 //==========================================================================================================================
@@ -307,7 +307,7 @@ textarea{
             z-index: 120;
             &::before{
                 content: '';
-                background-image: url('../img/kamila.JPG'); 
+                background-image: url('../img/kamila.webp'); 
                 position: absolute; 
                 background-size: cover;
                 top: 0; 
@@ -358,7 +358,7 @@ textarea{
 
         &::before{
             content: '';
-            background-image: url('../img/circle.png'); 
+            background-image: url('../img/circle.webp'); 
             position: absolute; 
             background-size: cover;
             @include adaptiv-position(100, 58);
@@ -505,7 +505,7 @@ textarea{
             text-align: center;
             &::before{
                 content: '';
-                background-image: url('../img/kamila.JPG'); 
+                background-image: url('../img/kamila.webp'); 
                 position: absolute; 
                 background-size: cover;
                 top: 0; 
@@ -677,4 +677,58 @@ footer{
     color: white;
     letter-spacing: 1px;
     font-size: 12px;
+}
+
+
+.popUp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #121212;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+    transition: all 0.5s ease;
+
+    &__text {
+        margin-bottom: 30px;
+        @include adaptiv-font(18, 12);
+        line-height: 25px;
+    }
+    &__image {
+        height: 150px;
+        width: 150px;
+        margin-bottom: 30px;
+
+        img{
+            width: 100%;
+            object-fit: cover;
+
+        }
+    }
+    &__btn {
+        color: #fff;
+        @include adaptiv-font(14, 10)
+    }
+}
+@media (max-width:767px) {
+    .popUp {
+        padding: 10px;
+        &__text {
+            margin-bottom: 15px;
+            @include adaptiv-font(18, 12);
+            line-height: 15px;
+        }
+        &__image {
+            height: 100px;
+            width: 100px;
+            margin-bottom: 15px;
+        }
+    }
 }
