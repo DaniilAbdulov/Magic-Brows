@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
 
 
-      alert('В подсвеченном поле некорректные данные');
+      //alert('В подсвеченном поле некорректные данные');
     }
   }
 
