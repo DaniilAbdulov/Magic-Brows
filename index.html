@@ -13,12 +13,61 @@
     <title>Magic Brows</title>
 </head>
 <body>
+    <header class="header">
+        <div class="header__container">
+          <div class="header__menu menu">
+            <div class="menu__icon"><span></span></div>
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li>
+                  <a href="#" data-goto=".about" class="menu__link"
+                    >About me</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-goto=".portfolio" class="menu__link"
+                    >Portfolio</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-goto=".price" class="menu__link"
+                    >Price</a
+                  >
+                </li>
+                <li>
+                    <a href="#" class="menu__link" data-goto=".swiper"
+                      >My works</a
+                    >
+                  </li>
+                <li id="touch">
+                  <a href="#" class="menu__link" 
+                    >Contacts</a
+                  >
+                  <span class="menu__arrow"></span>
+                  <ul class="menu__sub-list">
+                    <li>
+                      <a href="tel:+79220031508" class="menu__sub-link _icon-phone"></a>
+                    </li>
+                    <li>
+                      <a href="https://t.me/MagicBrows72"  target="_blank" class="menu__sub-link _icon-telegram"></a>
+                    </li>
+                    <li>
+                      <a href="https://instagram.com/magic_brows72?igshid=NTc4MTIwNjQ2YQ==" target="_blank" class="menu__sub-link _icon-instagram"></a>
+                    </li>
+                  </ul>
+                </li>
+
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
     <div class="wrapper">
         <div class="full-screen">
             <div class="full-screen__body">
                 <div class="full-screen__title">KAMILA SHAYAKHMETOVA</div>
                 <div class="full-screen__text">Magic Brows</div>
-                <div class="full-screen__link"><a href="#portfolio">VIEW PORTFOLIO</a></div>
+                <!-- <div class="full-screen__link"><a href="#portfolio">VIEW PORTFOLIO</a></div> -->
             </div>
             <div class="full-screen__photo">
                 <img src="" alt="">
@@ -260,28 +309,8 @@
         <button class="popUp__btn feedback__buttom" id="popbtn">OK</button>
    </div>
     <script src="./js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper(".mySwiper", {
-          effect: "coverflow",
-          loop: true,
-          speed: 1000,
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: "auto",
-          coverflowEffect: {
-            depth: 100,
-            modifier: 1,
-            rotate: 50,
-            slideShadows: false,
-            stretch: 0,
-          },
-        });
-      </script>
    <script src="./js/wow.min.js"></script>
-   <script>
-   new WOW().init();
-   </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
