@@ -83,9 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
           alert(error.message);
           load.classList.remove('_sending');
         });
-    } else {          
-          const popUpImg = document.querySelector('.popUp_image');
-          popUpImg.style.visability = 'visible';
           wrap.style.opacity = 0.1;
           pop.style.display = 'flex';
     
