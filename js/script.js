@@ -1,7 +1,7 @@
 'use strict'
 const wrap = document.querySelector('.wrapper');
 const pop = document.querySelector('.popUp');
-pop.style.scale = '0';
+pop.style.display = 'none';
 const btn = document.getElementById('popbtn');
 
 
@@ -75,14 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
           }
         })
         .then(result => {
-          wrap.style.opacity = 0.1;
-          pop.style.scale = '1';
-    
-          btn.addEventListener('click', hidePopUp);
-          function hidePopUp(){
-            wrap.style.opacity = 1;
-            pop.style.scale = '0'
-          }
+
           form.reset();
           load.classList.remove('_sending');
         })
@@ -90,7 +83,15 @@ document.addEventListener('DOMContentLoaded', function () {
           alert(error.message);
           load.classList.remove('_sending');
         });
-    } else {
+    } else {          
+          wrap.style.opacity = 0.1;
+          pop.style.display = 'flex';
+    
+          btn.addEventListener('click', hidePopUp);
+          function hidePopUp(){
+            wrap.style.opacity = 1;
+            pop.style.display = 'none'
+          }
 
 
       alert('В подсвеченном поле некорректные данные');
