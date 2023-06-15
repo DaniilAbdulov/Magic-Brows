@@ -17,7 +17,7 @@ if(isset($_POST['submit'])) { // Проверяем, была ли отправ�
 
     // Конфигурация бота
     $botToken = '6065542648:AAG04VyT6ZkSbrtH_7B9sAHfxk4WuOAHC88';
-    $chatId = 'https://t.me/magicbrows_bot';
+    $chatId = '@magicbrows_bot';
 
     // Отправляем сообщение в телеграмм-бота
     $url = "https://api.telegram.org/bot$botToken/sendMessage?chat_id=$chatId&parse_mode=HTML&text=".urlencode($text);

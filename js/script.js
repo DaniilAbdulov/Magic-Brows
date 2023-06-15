@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
         body: formData
       });
       
-      Promise.all([sendMailRequest, anotherRequest])
+      Promise.allSettled([sendMailRequest, anotherRequest])
         .then(responses => {
-          return Promise.all(responses.map(response => {
+          return Promise.allSettled(responses.map(response => {
             if (response.ok) {
               return response.json();
             } else {
@@ -203,6 +203,9 @@ if (window.innerWidth < 767) {
   document.body.classList.add('_touch');
   touch.addEventListener('click', function(){
     touch.classList.toggle('_active')
+    setTimeout(function(){
+      touch.classList.remove('_active')
+    },5000);
   })
 
 } else { 
