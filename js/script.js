@@ -62,22 +62,31 @@ document.addEventListener('DOMContentLoaded', function () {
     if (error === 0) {
       load.classList.add('_sending');
 
-      fetch('sendmail.php', {
+      const formData = new FormData(form);
+      const sendMailRequest = fetch('sendmail.php', {
         method: 'POST',
-        body: new FormData(form)
-      })
-        .then(response => {
-          if (response.ok) {
-            return response.json();
-          } else {
-
-            throw new Error('Network response was not ok.');
-          }
+        body: formData
+      });
+      
+      const anotherRequest = fetch('sendtelegramm.php', {
+        method: 'POST',
+        body: formData
+      });
+      
+      Promise.allSettled([sendMailRequest, anotherRequest])
+        .then(responses => {
+          return Promise.allSettled(responses.map(response => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('Network response was not ok.');
+            }
+          }));
         })
-        .then(result => {
+        .then(results => {
+          // обработка результатов
           wrap.style.opacity = 0.1;
           pop.style.display = 'flex';
-    
           btn.addEventListener('click', hidePopUp);
           function hidePopUp(){
             wrap.style.opacity = 1;
@@ -158,6 +167,7 @@ if(iconMenu){
 
 
 const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+const touch = document.getElementById('touch');
 if (menuLinks.length > 0) {
   menuLinks.forEach((menuLink) => {
     menuLink.addEventListener('click', onMenuLinkClick);
@@ -173,7 +183,6 @@ if (menuLinks.length > 0) {
         gotoBlock.getBoundingClientRect().top +
         scrollY -
         document.querySelector('header').offsetHeight;
-
       if(iconMenu.classList.contains('_active')){
         document.body.classList.remove('_lock')
         iconMenu.classList.remove('_active');
@@ -193,7 +202,6 @@ if (menuLinks.length > 0) {
 
 if (window.innerWidth < 767) { 
   document.body.classList.add('_touch');
-  const touch = document.getElementById('touch');
   touch.addEventListener('click', function(){
     touch.classList.toggle('_active')
   })
