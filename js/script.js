@@ -36,7 +36,6 @@ window.addEventListener('load', function() {
   new WOW().init();
   gsap.from('.full-screen__title', {opacity:0, delay:0.5,y:30})
   gsap.from('.full-screen__text', {opacity:0, delay:1,y:-30})
-  gsap.from('.full-screen__link', {opacity:0, delay:1.5,y:60})
 });
 
 
@@ -73,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
         body: formData
       });
       
-      Promise.allSettled([sendMailRequest, anotherRequest])
+      Promise.all([sendMailRequest, anotherRequest])
         .then(responses => {
-          return Promise.allSettled(responses.map(response => {
+          return Promise.all(responses.map(response => {
             if (response.ok) {
               return response.json();
             } else {
