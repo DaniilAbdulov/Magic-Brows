@@ -74,12 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(result => {
           wrap.style.opacity = 0.1;
-          pop.style.scale = '1';
+          pop.style.display = 'flex';
     
           btn.addEventListener('click', hidePopUp);
           function hidePopUp(){
             wrap.style.opacity = 1;
-            pop.style.scale = '0'
+            pop.style.display = 'none'
           }
           form.reset();
           load.classList.remove('_sending');
