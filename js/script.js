@@ -60,36 +60,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (error === 0) {
       load.classList.add('_sending');
+      fetch('sendmail.php', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+        .then(response => {
+          if (response.ok) {
+            return response.json();
+          } else {
 
-      const formData = new FormData(form);
-      const sendMailRequest = fetch('sendmail.php', {
-        method: 'POST',
-        body: formData
-      });
-      
-      const anotherRequest = fetch('sendtelegramm.php', {
-        method: 'POST',
-        body: formData
-      });
-      
-      Promise.allSettled([sendMailRequest, anotherRequest])
-        .then(responses => {
-          return Promise.allSettled(responses.map(response => {
-            if (response.ok) {
-              return response.json();
-            } else {
-              throw new Error('Network response was not ok.');
-            }
-          }));
+            throw new Error('Network response was not ok.');
+          }
         })
-        .then(results => {
-          // обработка результатов
+        .then(result => {
           wrap.style.opacity = 0.1;
-          pop.style.display = 'flex';
+          pop.style.scale = '1';
+    
           btn.addEventListener('click', hidePopUp);
           function hidePopUp(){
             wrap.style.opacity = 1;
-            pop.style.display = 'none'
+            pop.style.scale = '0'
           }
           form.reset();
           load.classList.remove('_sending');
