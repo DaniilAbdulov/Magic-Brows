@@ -59,6 +59,16 @@ $maxWidth:1280;
         top: calc(#{$mobSize + px} + #{$addMobSize} * (100vw / #{$maxWidth}));
     }
 }
+@mixin adaptiv-lh($pcSize, $mobSize){
+    $addSize: $pcSize - $mobSize;
+    $addMobSize: $addSize + $addSize * 0.7;
+    @media (max-width:767px) {
+        line-height: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 320px) / #{$maxWidth}));
+    }
+    @media (min-width:767px) {
+        line-height: calc(#{$mobSize + px} + #{$addMobSize} * (100vw / #{$maxWidth}));
+    }
+}
 
 @font-face {
     
@@ -163,7 +173,7 @@ textarea{
     
     
     &__body {
-        gap: 10px;
+        gap: 15px;
     }
     @media (max-width:767px) {
         &__body {
@@ -175,6 +185,23 @@ textarea{
     }
 
     &__text {
+
+        @include adaptiv-lh(26, 20);
+        text-align: center;
+        h1{
+            margin-bottom: 10px;
+
+            letter-spacing: 1px;
+            font-weight: 600;
+
+        }
+        p{
+            @include adaptiv-font(20, 14);
+
+            letter-spacing: 1px;
+
+        }
+
     }
     &_image {
         img{
@@ -184,7 +211,7 @@ textarea{
     }
     &__circle{
     top: 5px;
-    @include adaptiv-position(190, 110)
+    @include adaptiv-position(160, 90)
     }
 
 
@@ -241,7 +268,7 @@ textarea{
 
     &__circle {
         top: 5px;
-        @include adaptiv-position(150, 80)
+        @include adaptiv-position(-10, -10)
     }
 
     &__items {
@@ -286,7 +313,7 @@ textarea{
 .price {
     &__circle {
         top: 3px;
-        @include adaptiv-position(20, 45)
+        @include adaptiv-position(40, 65)
     }
     &__body {
         padding: 0 20px;
@@ -372,7 +399,7 @@ textarea{
             background-image: url('../img/circle.webp'); 
             position: absolute; 
             background-size: cover;
-            @include adaptiv-position(100, 58);
+            @include adaptiv-position(175, 100);
             @include adaptiv-positionTop(-33, -24);
             @include adaptiv-circle(145, 90);
             opacity: 1;
@@ -458,7 +485,7 @@ textarea{
     &__circle{
         position: absolute;
         @include adaptiv-positionTop(-20,-15);
-        @include adaptiv-position(45,21);
+        @include adaptiv-position(75,50);
         @include adaptiv-circle(110, 70);
         z-index: -1;
         img{
