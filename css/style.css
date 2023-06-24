@@ -899,7 +899,7 @@ footer {
 
 @media (max-width: 767px) {
   .foco {
-    display: none;
+    display: block;
   }
   .foot__title {
     display: none;
@@ -911,7 +911,17 @@ footer {
     text-align: center;
   }
 }
+.left__column {
+  order: 1;
+}
+
+@media (max-width: 767px) {
+  .left__column {
+    order: 1;
+  }
+}
 .middle {
+  order: 2;
   flex: 1 0 50%;
   display: flex;
   justify-content: center;
@@ -933,6 +943,7 @@ footer {
 }
 
 .right {
+  order: 3;
   flex: 0 1 25%;
   display: flex;
   flex-direction: column;
@@ -943,6 +954,11 @@ footer {
   padding-left: 0px;
 }
 
+@media (max-width: 767px) {
+  .right {
+    order: 3;
+  }
+}
 .a_adress {
   text-decoration: underline;
   color: white;
