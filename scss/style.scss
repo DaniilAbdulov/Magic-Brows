@@ -1,4 +1,4 @@
-@import './nullstyle.scss';
+@import "./nullstyle.scss";
 
 $marginMobile: 0px 0px 30px 0px;
 $redColor: #4e0e1f;
@@ -91,14 +91,14 @@ $maxWidth: 1280;
 }
 
 @font-face {
-    font-family: 'Bang';
-    src: url('../fonts/Black.Angel.Demo.ttf') format('truetype');
+    font-family: "Bang";
+    src: url("../fonts/Black.Angel.Demo.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
 
 html {
-    font-family: Gilroy, 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: Gilroy, "Helvetica Neue", Helvetica, sans-serif;
     color: #fff;
     scroll-behavior: smooth;
 }
@@ -144,8 +144,8 @@ textarea {
         flex: 1;
         flex-direction: column;
         &::before {
-            content: '';
-            background-image: url('../img/mountains.webp');
+            content: "";
+            background-image: url("../img/mountains.webp");
             background-position: 0 0;
             position: absolute;
             background-repeat: no-repeat;
@@ -162,7 +162,7 @@ textarea {
     @media (max-width: 769px) {
         &__body {
             &::before {
-                background-image: url('../img/kamilainmoscow.webp');
+                background-image: url("../img/kamilainmoscow.webp");
             }
         }
     }
@@ -176,7 +176,7 @@ textarea {
         margin-bottom: 30px;
     }
     &__text {
-        font-family: 'Bang', 'Helvetica Neue', Helvetica, sans-serif;
+        font-family: "Bang", "Helvetica Neue", Helvetica, sans-serif;
         text-align: center;
         @include adaptiv-font(100, 55);
         letter-spacing: 10px;
@@ -363,8 +363,8 @@ textarea {
             position: relative;
             z-index: 120;
             &::before {
-                content: '';
-                background-image: url('../img/kamila.webp');
+                content: "";
+                background-image: url("../img/kamila.webp");
                 position: absolute;
                 background-size: cover;
                 top: 0;
@@ -412,8 +412,8 @@ textarea {
 .swiper {
     &__title {
         &::before {
-            content: '';
-            background-image: url('../img/circle.webp');
+            content: "";
+            background-image: url("../img/circle.webp");
             position: absolute;
             background-size: cover;
             @include adaptiv-position(175, 100);
@@ -531,7 +531,7 @@ textarea {
         padding: 15px;
         position: relative;
         &::after {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
@@ -554,8 +554,8 @@ textarea {
             z-index: 120;
             text-align: center;
             &::before {
-                content: '';
-                background-image: url('../img/kamila.webp');
+                content: "";
+                background-image: url("../img/kamila.webp");
                 position: absolute;
                 background-size: cover;
                 top: 0;
@@ -746,7 +746,7 @@ footer {
 }
 
 .a_adress {
-    text-decoration: underline;
+    border-bottom: 1px solid white;
     color: white;
     letter-spacing: 1px;
     font-size: 12px;
@@ -809,7 +809,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 14;
-    background-color: #121212;
+    //background-color: #121212;
 }
 .header__container {
     max-width: $maxWidth;
@@ -915,7 +915,7 @@ body._touch .menu__list > li._active .menu__sub-list {
     }
     .menu__icon::before,
     .menu__icon::after {
-        content: '';
+        content: "";
     }
     .menu__icon::before {
         top: 0;
@@ -942,7 +942,7 @@ body._touch .menu__list > li._active .menu__sub-list {
         left: 0;
     }
     .menu__body::before {
-        content: '';
+        content: "";
         position: fixed;
         width: 100%;
         top: 0;

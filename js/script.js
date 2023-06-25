@@ -1,29 +1,31 @@
-'use strict';
-const wrap = document.querySelector('.wrapper');
-const pop = document.querySelector('.popUp');
-pop.style.display = 'none';
-const btn = document.getElementById('popbtn');
+"use strict";
+const h = document.documentElement.clientHeight;
 
-document.body.style.display = 'none';
-var loader = document.createElement('div');
-loader.style.display = 'block';
-loader.innerText = 'Loading...';
+const wrap = document.querySelector(".wrapper");
+const pop = document.querySelector(".popUp");
+pop.style.display = "none";
+const btn = document.getElementById("popbtn");
+
+document.body.style.display = "none";
+var loader = document.createElement("div");
+loader.style.display = "block";
+loader.innerText = "Loading...";
 document.body.appendChild(loader);
 
 // Ждем загрузки всех ресурсов
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
     // Скрываем прелоадер и показываем содержимое сайта
-    loader.style.display = 'none';
-    document.body.style.display = 'block';
+    loader.style.display = "none";
+    document.body.style.display = "block";
 
     // Инициализируем Swiper и WOW.js
-    const swiper = new Swiper('.mySwiper', {
-        effect: 'coverflow',
+    const swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
         loop: true,
         speed: 1000,
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 'auto',
+        slidesPerView: "auto",
         coverflowEffect: {
             depth: 100,
             modifier: 1,
@@ -33,8 +35,8 @@ window.addEventListener('load', function () {
         },
     });
     new WOW().init();
-    gsap.from('.full-screen__title', { opacity: 0, delay: 0.5, y: 30 });
-    gsap.from('.full-screen__text', { opacity: 0, delay: 1, y: -30 });
+    gsap.from(".full-screen__title", { opacity: 0, delay: 0.5, y: 30 });
+    gsap.from(".full-screen__text", { opacity: 0, delay: 1, y: -30 });
 });
 
 const dateControl = document.querySelector('input[type="datetime-local"]');
@@ -42,10 +44,10 @@ const now = new Date().toISOString().slice(0, 16);
 dateControl.value = now;
 dateControl.min = now;
 
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('form');
-    const load = document.getElementById('load');
-    form.addEventListener('submit', formSend);
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("form");
+    const load = document.getElementById("load");
+    form.addEventListener("submit", formSend);
 
     function formSend(e) {
         e.preventDefault();
@@ -53,58 +55,58 @@ document.addEventListener('DOMContentLoaded', function () {
         const error = formValidate(form);
 
         if (error === 0) {
-            load.classList.add('_sending');
-            fetch('sendmail.php', {
-                method: 'POST',
+            load.classList.add("_sending");
+            fetch("sendmail.php", {
+                method: "POST",
                 body: new FormData(form),
             })
                 .then((response) => {
                     if (response.ok) {
                         return response.json();
                     } else {
-                        throw new Error('Network response was not ok.');
+                        throw new Error("Network response was not ok.");
                     }
                 })
                 .then((result) => {
                     wrap.style.opacity = 0.1;
-                    pop.style.display = 'flex';
+                    pop.style.display = "flex";
 
-                    btn.addEventListener('click', hidePopUp);
+                    btn.addEventListener("click", hidePopUp);
                     function hidePopUp() {
                         wrap.style.opacity = 1;
-                        pop.style.display = 'none';
+                        pop.style.display = "none";
                     }
                     form.reset();
-                    load.classList.remove('_sending');
+                    load.classList.remove("_sending");
                 })
                 .catch((error) => {
                     alert(error.message);
-                    load.classList.remove('_sending');
+                    load.classList.remove("_sending");
                 });
         } else {
-            alert('В подсвеченном поле некорректные данные');
+            alert("В подсвеченном поле некорректные данные");
         }
     }
 
     function formValidate(form) {
         let error = 0;
-        const formReq = form.querySelectorAll('._req');
+        const formReq = form.querySelectorAll("._req");
 
         formReq.forEach((input) => {
             formRemoveError(input);
 
-            if (input.classList.contains('_name')) {
+            if (input.classList.contains("_name")) {
                 if (nameTest(input)) {
                     formAddError(input);
                     error++;
                 }
-            } else if (input.classList.contains('_telephone')) {
+            } else if (input.classList.contains("_telephone")) {
                 if (telephoneTest(input)) {
                     formAddError(input);
                     error++;
                 }
             } else {
-                if (input.value === '') {
+                if (input.value === "") {
                     formAddError(input);
                     error++;
                 }
@@ -115,13 +117,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function formAddError(input) {
-        input.parentElement.classList.add('_error');
-        input.classList.add('_error');
+        input.parentElement.classList.add("_error");
+        input.classList.add("_error");
     }
 
     function formRemoveError(input) {
-        input.parentElement.classList.remove('_error');
-        input.classList.remove('_error');
+        input.parentElement.classList.remove("_error");
+        input.classList.remove("_error");
     }
 
     function nameTest(input) {
@@ -133,21 +135,21 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-const iconMenu = document.querySelector('.menu__icon');
-const menuBody = document.querySelector('.menu__body');
+const iconMenu = document.querySelector(".menu__icon");
+const menuBody = document.querySelector(".menu__body");
 if (iconMenu) {
-    iconMenu.addEventListener('click', function (e) {
-        document.body.classList.toggle('_lock');
-        iconMenu.classList.toggle('_active');
-        menuBody.classList.toggle('_active');
+    iconMenu.addEventListener("click", function (e) {
+        document.body.classList.toggle("_lock");
+        iconMenu.classList.toggle("_active");
+        menuBody.classList.toggle("_active");
     });
 }
 
-const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-const touch = document.getElementById('touch');
+const menuLinks = document.querySelectorAll(".menu__link[data-goto]");
+const touch = document.getElementById("touch");
 if (menuLinks.length > 0) {
     menuLinks.forEach((menuLink) => {
-        menuLink.addEventListener('click', onMenuLinkClick);
+        menuLink.addEventListener("click", onMenuLinkClick);
     });
     function onMenuLinkClick(e) {
         const menuLink = e.target;
@@ -159,16 +161,16 @@ if (menuLinks.length > 0) {
             const gotoBlockValue =
                 gotoBlock.getBoundingClientRect().top +
                 scrollY -
-                document.querySelector('header').offsetHeight;
-            if (iconMenu.classList.contains('_active')) {
-                document.body.classList.remove('_lock');
-                iconMenu.classList.remove('_active');
-                menuBody.classList.remove('_active');
+                document.querySelector("header").offsetHeight;
+            if (iconMenu.classList.contains("_active")) {
+                document.body.classList.remove("_lock");
+                iconMenu.classList.remove("_active");
+                menuBody.classList.remove("_active");
             }
 
             window.scrollTo({
                 top: gotoBlockValue,
-                behavior: 'smooth',
+                behavior: "smooth",
             });
             e.preventDefault();
         }
@@ -176,13 +178,47 @@ if (menuLinks.length > 0) {
 }
 
 if (window.innerWidth < 767) {
-    document.body.classList.add('_touch');
-    touch.addEventListener('click', function () {
-        touch.classList.toggle('_active');
+    document.body.classList.add("_touch");
+    touch.addEventListener("click", function () {
+        touch.classList.toggle("_active");
         setTimeout(function () {
-            touch.classList.remove('_active');
+            touch.classList.remove("_active");
         }, 5000);
     });
 } else {
-    document.body.classList.add('_pc');
+    document.body.classList.add("_pc");
 }
+
+//=====================
+//скрытие линии бургера
+const header = document.querySelector(".header");
+let isAnimated = false; // флаг, чтобы не запускать анимацию во время выполнения предыдущей
+
+document.addEventListener("scroll", function () {
+    let location = ((scrollY / h) * 100).toFixed(2);
+    if (location > 6) {
+        if (!isAnimated) {
+            requestAnimationFrame(function () {
+                header.style.transition = "background-color 0.3s ease-in-out";
+                header.style.backgroundColor = "#121212";
+                isAnimated = false;
+            });
+        }
+    } else if (document.body.scrollTop == 0) {
+        if (!isAnimated) {
+            requestAnimationFrame(function () {
+                header.style.transition = "background-color 0.3s ease-in-out";
+                header.style.backgroundColor = "";
+                isAnimated = false;
+            });
+        }
+    } else {
+        if (!isAnimated) {
+            requestAnimationFrame(function () {
+                header.style.transition = "background-color 0.3s ease-in-out";
+                header.style.backgroundColor = "none";
+                isAnimated = false;
+            });
+        }
+    }
+});

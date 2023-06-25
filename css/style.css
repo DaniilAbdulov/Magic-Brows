@@ -994,7 +994,7 @@ footer {
 }
 
 .a_adress {
-  text-decoration: underline;
+  border-bottom: 1px solid white;
   color: white;
   letter-spacing: 1px;
   font-size: 12px;
@@ -1098,7 +1098,6 @@ header {
   left: 0;
   width: 100%;
   z-index: 14;
-  background-color: #121212;
 }
 
 .header__container {
