@@ -517,6 +517,9 @@ textarea {
 .table__item-label {
   padding-right: 3px;
 }
+.table__item-label:hover {
+  font-weight: bold;
+}
 
 .swiper__title::before {
   content: "";
@@ -818,7 +821,6 @@ textarea {
 }
 .feedback__buttom {
   opacity: 1;
-  max-width: 100px;
   padding: 5px 15px;
   margin: 0 auto;
   background: none;
@@ -1158,11 +1160,12 @@ body._touch .menu__list > li._active .menu__sub-list {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: #121212;
+  background-color: rgba(18, 18, 18, 0.7);
   padding: 15px;
   min-width: 200px;
   display: flex;
   gap: 15px;
+  border-radius: 6px;
   justify-content: center;
 }
 
