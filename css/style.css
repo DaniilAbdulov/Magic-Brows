@@ -116,7 +116,7 @@ textarea {
   flex-direction: column;
   margin-bottom: 30px;
 }
-.full-screen .full-screen__body {
+.full-screen__body {
   padding: 50px 10px;
   background: #121212;
   position: relative;
@@ -127,19 +127,19 @@ textarea {
   flex: 1;
   flex-direction: column;
 }
-.full-screen .full-screen__body::before {
+.full-screen__body::before {
   content: "";
   background-image: url("../img/kamila.webp");
   position: absolute;
   background-size: cover;
-  top: 0;
+  top: 0px;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0.3;
   z-index: -1;
 }
-.full-screen .full-screen__title {
+.full-screen__title {
   padding: 0 10px;
   text-align: center;
   text-transform: uppercase;
@@ -147,48 +147,48 @@ textarea {
   margin-bottom: 30px;
 }
 @media (max-width: 767px) {
-  .full-screen .full-screen__title {
+  .full-screen__title {
     font-size: calc(
             28px + 54.4 * ((100vw - 320px) / 1280)
         );
   }
 }
 @media (min-width: 767px) {
-  .full-screen .full-screen__title {
+  .full-screen__title {
     font-size: calc(
             28px + 54.4 * (100vw / 1280)
         );
   }
 }
 @media (max-width: 767px) {
-  .full-screen .full-screen__title {
+  .full-screen__title {
     letter-spacing: calc(
             5px + 11.9 * ((100vw - 320px) / 1280)
         );
   }
 }
 @media (min-width: 767px) {
-  .full-screen .full-screen__title {
+  .full-screen__title {
     letter-spacing: calc(
             5px + 11.9 * (100vw / 1280)
         );
   }
 }
-.full-screen .full-screen__text {
+.full-screen__text {
   font-family: "Bang", "Helvetica Neue", Helvetica, sans-serif;
   text-align: center;
   letter-spacing: 10px;
   margin-bottom: 30px;
 }
 @media (max-width: 767px) {
-  .full-screen .full-screen__text {
+  .full-screen__text {
     font-size: calc(
             55px + 76.5 * ((100vw - 320px) / 1280)
         );
   }
 }
 @media (min-width: 767px) {
-  .full-screen .full-screen__text {
+  .full-screen__text {
     font-size: calc(
             55px + 76.5 * (100vw / 1280)
         );
@@ -203,13 +203,13 @@ textarea {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.full-screen .full-screen__link {
+.full-screen__link {
   text-decoration: none;
   padding-bottom: 3px;
   border-bottom: 2px solid white;
   letter-spacing: 5px;
 }
-.full-screen .full-screen__link a {
+.full-screen__link a {
   color: #fff;
 }
 

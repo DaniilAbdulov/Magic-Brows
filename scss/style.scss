@@ -133,7 +133,7 @@ textarea {
     flex-direction: column;
     margin-bottom: 30px;
 
-    .full-screen__body {
+    &__body {
         padding: 50px 10px;
         background: #121212;
         position: relative;
@@ -148,7 +148,7 @@ textarea {
             background-image: url('../img/kamila.webp');
             position: absolute;
             background-size: cover;
-            top: 0;
+            top: 0px;
             left: 0;
             width: 100%;
             height: 100%;
@@ -156,7 +156,16 @@ textarea {
             z-index: -1;
         }
     }
-    .full-screen__title {
+    // @media (max-width: 767px) {
+    //     &__body {
+    //         &::before {
+    //             margin-top: 0px;
+    //             top: 0px;
+    //             left: 0px;
+    //         }
+    //     }
+    // }
+    &__title {
         padding: 0 10px;
         text-align: center;
         text-transform: uppercase;
@@ -165,7 +174,7 @@ textarea {
         font-weight: 700;
         margin-bottom: 30px;
     }
-    .full-screen__text {
+    &__text {
         font-family: 'Bang', 'Helvetica Neue', Helvetica, sans-serif;
         text-align: center;
         @include adaptiv-font(100, 55);
@@ -180,7 +189,7 @@ textarea {
         height: 100%;
         object-fit: cover;
     }
-    .full-screen__link {
+    &__link {
         text-decoration: none;
         padding-bottom: 3px;
         border-bottom: 2px solid white;
@@ -190,6 +199,7 @@ textarea {
         }
     }
 }
+
 //==========================================================================================================================
 .container {
     max-width: #{$maxWidth + px};
