@@ -114,6 +114,7 @@ textarea {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-bottom: 30px;
 }
 .full-screen .full-screen__body {
   padding: 50px 10px;
@@ -125,6 +126,18 @@ textarea {
   align-items: center;
   flex: 1;
   flex-direction: column;
+}
+.full-screen .full-screen__body::before {
+  content: "";
+  background-image: url("../img/kamila.webp");
+  position: absolute;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  z-index: -1;
 }
 .full-screen .full-screen__title {
   padding: 0 10px;
