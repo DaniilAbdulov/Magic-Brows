@@ -86,6 +86,25 @@ body {
   position: relative;
 }
 
+.body__content {
+  display: block;
+}
+
+.body__loader {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 15;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 60px;
+}
+.body__loader img {
+  width: 100%;
+}
+
 body._lock {
   overflow: hidden;
 }

@@ -1,24 +1,20 @@
 "use strict";
-const h = document.documentElement.clientHeight;
 
+//constants
+const h = document.documentElement.clientHeight;
 const wrap = document.querySelector(".wrapper");
 const pop = document.querySelector(".popUp");
 pop.style.display = "none";
 const btn = document.getElementById("popbtn");
-
-document.body.style.display = "none";
-var loader = document.createElement("div");
+const content = document.querySelector(".body__content");
+const loader = document.querySelector(".body__loader");
 loader.style.display = "block";
-loader.innerText = "Loading...";
-document.body.appendChild(loader);
+content.style.display = "none";
 
 // Ждем загрузки всех ресурсов
 window.addEventListener("load", function () {
-    // Скрываем прелоадер и показываем содержимое сайта
     loader.style.display = "none";
-    document.body.style.display = "block";
-
-    // Инициализируем Swiper и WOW.js
+    content.style.display = "block";
     const swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         loop: true,
@@ -38,12 +34,12 @@ window.addEventListener("load", function () {
     gsap.from(".full-screen__title", { opacity: 0, delay: 0.5, y: 30 });
     gsap.from(".full-screen__text", { opacity: 0, delay: 1, y: -30 });
 });
-
+//время в форме
 const dateControl = document.querySelector('input[type="datetime-local"]');
 const now = new Date().toISOString().slice(0, 16);
 dateControl.value = now;
 dateControl.min = now;
-
+//отправка формы
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("form");
     const load = document.getElementById("load");
