@@ -368,7 +368,7 @@ textarea {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: 0 0;
+
             position: absolute;
             top: 0;
             left: 0;
@@ -381,7 +381,7 @@ textarea {
             z-index: 120;
             &::before {
                 content: "";
-                background-image: url("../img/kamila.webp");
+                background-image: url("../img/price/price.webp");
                 position: absolute;
                 background-size: cover;
                 top: 0;

@@ -473,8 +473,6 @@ textarea {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: 0 0;
-     object-position: 0 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -486,7 +484,7 @@ textarea {
   }
   .price .price__table::before {
     content: "";
-    background-image: url("../img/kamila.webp");
+    background-image: url("../img/price/price.webp");
     position: absolute;
     background-size: cover;
     top: 0;
