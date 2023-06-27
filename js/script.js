@@ -36,7 +36,11 @@ window.addEventListener("load", function () {
 });
 //время в форме
 const dateControl = document.querySelector('input[type="datetime-local"]');
-const now = new Date().toISOString().slice(0, 16);
+const today = new Date();
+const timezoneOffset = today.getTimezoneOffset();
+const now = new Date(today.getTime() - timezoneOffset * 60 * 1000)
+    .toISOString()
+    .slice(0, 16);
 dateControl.value = now;
 dateControl.min = now;
 //отправка формы

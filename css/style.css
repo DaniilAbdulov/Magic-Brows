@@ -1286,3 +1286,17 @@ body._touch .menu__list > li._active .menu__sub-list {
     color: rgb(255, 252, 252);
   }
 }
+.iztf {
+  display: block;
+}
+
+@media (max-width: 1072px) {
+  .iztf {
+    display: none;
+  }
+}
+@media (max-width: 806px) {
+  .iztf {
+    display: block;
+  }
+}
