@@ -931,24 +931,27 @@ footer {
 @media (max-width: 767px) {
   .left__column {
     font-size: calc(
-            10px + 3.4 * ((100vw - 320px) / 1280)
+            11px + 3.4 * ((100vw - 320px) / 1280)
         );
   }
 }
 @media (min-width: 767px) {
   .left__column {
     font-size: calc(
-            10px + 3.4 * (100vw / 1280)
+            11px + 3.4 * (100vw / 1280)
         );
   }
 }
 
+.left__column-text {
+  letter-spacing: 1px;
+}
 .left__column-text p {
   margin-bottom: 5px;
 }
 .left__column-text span {
   display: none;
-  padding-right: 10px;
+  padding-right: 5px;
 }
 .left__column-text a {
   color: #fff;
@@ -957,8 +960,12 @@ footer {
 }
 
 @media (max-width: 767px) {
+  .left__column-text p {
+    margin-bottom: 0px;
+  }
   .left__column-text span {
     display: inline-block;
+    margin-bottom: 5px;
   }
 }
 @media (max-width: 767px) {

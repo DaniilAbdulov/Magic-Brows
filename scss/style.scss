@@ -687,15 +687,16 @@ footer {
     }
 }
 .left__column {
-    @include adaptiv-font(12, 10);
+    @include adaptiv-font(13, 11);
 }
 .left__column-text {
+    letter-spacing: 1px;
     p {
         margin-bottom: 5px;
     }
     span {
         display: none;
-        padding-right: 10px;
+        padding-right: 5px;
     }
     a {
         color: #fff;
@@ -705,8 +706,12 @@ footer {
 }
 @media (max-width: 767px) {
     .left__column-text {
+        p {
+            margin-bottom: 0px;
+        }
         span {
             display: inline-block;
+            margin-bottom: 5px;
         }
     }
 }
