@@ -31,8 +31,8 @@ window.addEventListener("load", function () {
         },
     });
     new WOW().init();
-    gsap.from(".full-screen__title", { opacity: 0, delay: 0.5, y: 30 });
-    gsap.from(".full-screen__text", { opacity: 0, delay: 1, y: -30 });
+    gsap.from(".full-screen__title", { opacity: 0, delay: 0.5, y: 60 });
+    gsap.from(".full-screen__text", { opacity: 0, delay: 1, y: -60 });
 });
 //время в форме
 const dateControl = document.querySelector('input[type="datetime-local"]');
