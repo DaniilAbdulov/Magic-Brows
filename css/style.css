@@ -491,7 +491,7 @@ textarea {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.3;
+    opacity: 0.5;
     z-index: -1;
   }
   .price .price__image {
@@ -549,25 +549,25 @@ textarea {
 @media (max-width: 767px) {
   .swiper__title::before {
     left: calc(
-            100px + 127.5 * ((100vw - 320px) / 1280)
+            150px + 170 * ((100vw - 320px) / 1280)
         );
   }
 }
 @media (min-width: 767px) {
   .swiper__title::before {
-    left: calc(100px + 127.5 * (100vw / 1280));
+    left: calc(150px + 170 * (100vw / 1280));
   }
 }
 @media (max-width: 767px) {
   .swiper__title::before {
     top: calc(
-            -24px + -15.3 * ((100vw - 320px) / 1280)
+            -24px + -18.7 * ((100vw - 320px) / 1280)
         );
   }
 }
 @media (min-width: 767px) {
   .swiper__title::before {
-    top: calc(-24px + -15.3 * (100vw / 1280));
+    top: calc(-24px + -18.7 * (100vw / 1280));
   }
 }
 @media (max-width: 767px) {
