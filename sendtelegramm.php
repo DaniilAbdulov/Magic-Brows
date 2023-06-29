@@ -36,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // проверка времени
   $current_time = time();
   $selected_time = strtotime($datetime);
+
   if ($selected_time - $current_time > 3600) {
     $response = [
       'status' => 'error',
@@ -45,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($datetime)) {
       $message_body .= "Дата и время: $datetime\r\n";
     }
+
     if (mail($to, $subject, $message_body, $headers)) {
       $response = [
         'status' => 'success',
@@ -61,5 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   echo json_encode($response);
 } else {
   http_response_code(403);
-  echo json_encode(['status' => 'error', 'message' => 'Доступ запрещен']);
+  echo json_encode([
+    'status' => 'error',
+    'message' => 'Доступ запрещен'
+  ]);
 }
