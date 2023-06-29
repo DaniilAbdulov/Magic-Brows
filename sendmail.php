@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $datetime = trim($datetime);
 
   $to = 'abdulov.dany@yandex.ru';
-  $subject = 'Заявка с сайта';
+  $subject = 'Сообщение с сайта MagicBrows';
   $headers = 'From: webmaster@magicbrows.ru' . "\r\n" .
              'Reply-To: webmaster@magicbrows.ru' . "\r\n" .
              'X-Mailer: PHP/' . phpversion();
