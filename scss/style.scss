@@ -1,6 +1,6 @@
 @import "./nullstyle.scss";
 
-$marginMobile: 0px 0px 30px 0px;
+$marginMobile: 0px 0px 35px 0px;
 $redColor: #4e0e1f;
 $heightPrice: 400px;
 $topPositionOfBackground: 0px;
@@ -227,7 +227,7 @@ textarea {
         }
     }
     &__text {
-        margin: 0px 0px 10px 0px;
+        margin-bottom: 10px;
     }
 
     &__text {
@@ -260,12 +260,12 @@ textarea {
 .block {
     position: relative;
     z-index: 10;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
     &__title {
         @include adaptiv-font(45, 25);
         font-weight: 700;
         letter-spacing: 2px;
-        margin-bottom: 50px;
+        margin-bottom: 80px;
     }
     @media (max-width: 767px) {
         &__title {

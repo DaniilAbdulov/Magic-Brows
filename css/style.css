@@ -245,7 +245,7 @@ textarea {
   }
 }
 .about__text {
-  margin: 0px 0px 10px 0px;
+  margin-bottom: 10px;
 }
 .about__text {
   text-align: center;
@@ -308,12 +308,12 @@ textarea {
 .block {
   position: relative;
   z-index: 10;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 .block__title {
   font-weight: 700;
   letter-spacing: 2px;
-  margin-bottom: 50px;
+  margin-bottom: 80px;
 }
 @media (max-width: 767px) {
   .block__title {
@@ -331,7 +331,7 @@ textarea {
 }
 @media (max-width: 767px) {
   .block__title {
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 35px 0px;
   }
 }
 .block .block__title-circle {
@@ -367,7 +367,7 @@ textarea {
 
 @media (max-width: 767px) {
   .block {
-    margin: 0px 0px 30px 0px;
+    margin: 0px 0px 35px 0px;
   }
 }
 .circle {
