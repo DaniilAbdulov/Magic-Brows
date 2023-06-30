@@ -836,6 +836,9 @@ textarea {
 .feedback__item:focus {
   opacity: 1;
 }
+.feedback__item-time {
+  text-align: center;
+}
 .feedback__buttom {
   opacity: 1;
   padding: 5px 15px;

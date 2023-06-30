@@ -609,10 +609,12 @@ textarea {
     &__item {
         padding: 5px;
         opacity: 0.5;
-        // text-align: center;
         &:focus {
             opacity: 1;
         }
+    }
+    &__item-time {
+        text-align: center;
     }
     &__buttom {
         opacity: 1;
