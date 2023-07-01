@@ -221,21 +221,18 @@ textarea {
     &__body {
         gap: 15px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 869px) {
         &__body {
             flex-direction: column;
         }
     }
     &__text {
         margin-bottom: 10px;
-    }
-
-    &__text {
         @include adaptiv-lh(26, 20);
-        text-align: center;
+        text-indent: 25px;
         h1 {
             margin-bottom: 10px;
-
+            @include adaptiv-lh(27, 17);
             letter-spacing: 1px;
             font-weight: 600;
         }
@@ -243,6 +240,12 @@ textarea {
             @include adaptiv-font(20, 14);
 
             letter-spacing: 1px;
+        }
+    }
+    @media (max-width: 767px) {
+        &__text {
+            text-indent: 0px;
+            text-align: center;
         }
     }
     &_image {
@@ -448,19 +451,22 @@ textarea {
         max-height: 700px;
         &__box {
             position: absolute;
-            bottom: 100px;
+            bottom: 0px;
             display: flex;
             flex-direction: column;
             padding: 30px;
-            color: #646464;
-
-            max-width: 300px;
+            color: #ffffff;
+            &-up {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                padding: 30px;
+                color: #ffffff;
+            }
         }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             &__box {
-                bottom: 40px;
-                padding: 10px;
-                max-width: 140px;
+                padding: 20px;
             }
         }
         img {
@@ -492,7 +498,8 @@ textarea {
 .box {
     &__title {
         margin-bottom: 10px;
-        @include adaptiv-font(40, 30);
+        letter-spacing: 1px;
+        @include adaptiv-font(35, 25);
     }
     @media (max-width: 767px) {
         .box__title {
@@ -834,7 +841,6 @@ header {
     left: 0;
     width: 100%;
     z-index: 14;
-    //background-color: #121212;
 }
 .header__container {
     max-width: $maxWidth;
