@@ -1062,6 +1062,8 @@ footer {
   text-align: center;
   border-radius: 5px;
   box-shadow: 0px 0px 5px black;
+  z-index: 10;
+  max-width: 300px;
 }
 .popUp__text {
   margin-bottom: 30px;

@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
     });
     new WOW().init();
     gsap.from(".full-screen__title", { opacity: 0, delay: 0.5, y: 60 });
-    gsap.from(".full-screen__text", { opacity: 0, delay: 1, y: -60 });
+    // gsap.from(".full-screen__text", { opacity: 0, delay: 1, y: -60 });
 });
 //время в форме
 const dateControl = document.querySelector('input[type="datetime-local"]');
@@ -47,73 +47,41 @@ dateControl.min = now;
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("form");
     const load = document.getElementById("load");
-    // form.addEventListener("submit", formSend);
     form.addEventListener("submit", sendTelegramForm);
 
-    // function formSend(e) {
-    //     e.preventDefault();
-
-    //     const error = formValidate(form);
-
-    //     if (error === 0) {
-    //         load.classList.add("_sending");
-    //         fetch("sendmail.v2.php", {
-    //             method: "POST",
-    //             body: new FormData(form),
-    //         })
-    //             .then((response) => {
-    //                 if (response.ok) {
-    //                     return response.json();
-    //                 } else {
-    //                     throw new Error("Network response was not ok.");
-    //                 }
-    //             })
-    //             .then((result) => {
-    //                 wrap.style.opacity = 0.1;
-    //                 pop.style.display = "flex";
-
-    //                 btn.addEventListener("click", hidePopUp);
-    //                 function hidePopUp() {
-    //                     wrap.style.opacity = 1;
-    //                     pop.style.display = "none";
-    //                 }
-    //                 form.reset();
-    //                 load.classList.remove("_sending");
-    //             })
-    //             .catch((error) => {
-    //                 alert(error.message);
-    //                 load.classList.remove("_sending");
-    //             });
-    //     } else {
-    //         alert("В подсвеченном поле некорректные данные");
-    //     }
-    // }
     function sendTelegramForm(e) {
         e.preventDefault();
 
         const error = formValidate(form);
 
         if (error === 0) {
-            var url =
-                "https://api.telegram.org/bot6065542648:AAG04VyT6ZkSbrtH_7B9sAHfxk4WuOAHC88/sendMessage";
+            const daniilToken =
+                "6065542648:AAG04VyT6ZkSbrtH_7B9sAHfxk4WuOAHC88";
+            const daniilChatId = "6099379205";
+            const kamilaToken =
+                "6009017631:AAHH8bPdEKUueKVF78koS31ilD_sNrhPm2o";
+            const kamilaChatId = "486643867";
+            const url = `https://api.telegram.org/bot${kamilaToken}/sendMessage`;
 
-            var chatId = "6099379205";
+            const chatId = kamilaChatId;
 
             const formElement = document.getElementById("form");
-            var name = formElement.querySelector('input[name="name"]').value;
-            var phone = formElement.querySelector('input[name="phone"]').value;
-            var message = formElement.querySelector(
+            const name = formElement.querySelector('input[name="name"]').value;
+            const phone = formElement.querySelector(
+                'input[name="phone"]'
+            ).value;
+            const message = formElement.querySelector(
                 'textarea[name="message"]'
             ).value;
-            var datetime = formElement.querySelector(
+            const datetime = formElement.querySelector(
                 'input[name="datetime"]'
             ).value;
 
-            var data = new FormData();
+            const data = new FormData();
             data.append("chat_id", chatId);
             data.append(
                 "text",
-                `Заявка с сайта\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}\nДата и время: ${datetime}`
+                `Сообщение с сайта magicbrows\nИмя: ${name}\nТелефон: ${phone}\nСообщение: ${message}\nДата и время: ${datetime}`
             );
 
             fetch(url, {
