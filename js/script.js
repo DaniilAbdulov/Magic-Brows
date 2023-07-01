@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (error === 0) {
             load.classList.add("_sending");
-            fetch("sendmail.php", {
+            fetch("sendmail.v2.php", {
                 method: "POST",
                 body: new FormData(form),
             })
