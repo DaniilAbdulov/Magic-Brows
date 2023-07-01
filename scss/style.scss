@@ -500,6 +500,9 @@ textarea {
         margin-bottom: 10px;
         letter-spacing: 1px;
         @include adaptiv-font(35, 25);
+        h2 {
+            box-shadow: 1px 1px 2px black;
+        }
     }
     @media (max-width: 767px) {
         .box__title {
@@ -509,6 +512,10 @@ textarea {
     &__text {
         @include adaptiv-font(18, 14);
     }
+}
+
+.up-right {
+    text-align: right;
 }
 
 .form {

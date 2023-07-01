@@ -674,6 +674,9 @@ textarea {
         );
   }
 }
+.box__title h2 {
+  box-shadow: 1px 1px 2px black;
+}
 @media (max-width: 767px) {
   .box .box__title {
     margin-bottom: 6px;
@@ -692,6 +695,10 @@ textarea {
             14px + 6.8 * (100vw / 1280)
         );
   }
+}
+
+.up-right {
+  text-align: right;
 }
 
 .form {
