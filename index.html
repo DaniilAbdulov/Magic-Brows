@@ -30,7 +30,16 @@
         <div class="body__loader">
             <img src="./img/giphy.gif" alt="" srcset="" />
         </div>
-        <div class="body__content">
+        <div class="question">
+            <div class="qusetion__text">
+                На данный момент некоторые фотоматериалы могут повторятся ввиду
+                того, что владалец сайта не предоставил полный пакет фото
+            </div>
+            <button class="question__btn" id="questionButton">
+                Продолжить просмотр
+            </button>
+        </div>
+        <main class="body__content">
             <header class="header">
                 <div class="header__container">
                     <div class="header__menu menu">
@@ -612,14 +621,21 @@
                 <div class="popUp__text">
                     Твоя формочка отправилась ко мне ❤️
                 </div>
-                <div class="popUp__image wow tada">
+                <div
+                    class="popUp__image wow tada"
+                    style="
+                        animation-iteration-count: infinite;
+
+                        animation-duration: 3s;
+                    "
+                >
                     <img src="./img/like.webp" alt="like" />
                 </div>
                 <button class="popUp__btn feedback__buttom" id="popbtn">
                     OK
                 </button>
             </div>
-        </div>
+        </main>
         <script src="./js/script.js"></script>
         <script src="./js/wow.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
