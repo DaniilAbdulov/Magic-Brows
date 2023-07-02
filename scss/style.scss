@@ -545,6 +545,7 @@ textarea {
         flex: 1 0 50%;
         position: relative;
         min-height: $heightPrice;
+        opacity: 0.8;
         img {
             border-radius: 5px;
             width: 100%;
@@ -585,7 +586,7 @@ textarea {
             text-align: center;
             &::before {
                 content: "";
-                background-image: url("../img/kamila.webp");
+                background-image: url("../img/form/dior.webp");
                 position: absolute;
                 background-size: cover;
                 top: 0;
@@ -610,8 +611,11 @@ textarea {
         @include adaptiv-font(16, 14);
         letter-spacing: 2px;
         line-height: 20px;
+        text-align: center;
     }
     &__message {
+        @include adaptiv-font(16, 14);
+        text-align: center;
         letter-spacing: 2px;
     }
     &__items {
@@ -1036,7 +1040,7 @@ body._touch .menu__list > li._active .menu__sub-list {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 300px;
+    max-width: 500px;
     background-color: rgb(0, 0, 0);
     color: #ffffff;
     display: flex;
@@ -1046,13 +1050,14 @@ body._touch .menu__list > li._active .menu__sub-list {
     padding: 10px 15px;
     z-index: 100;
     border-radius: 5px;
-    font-size: 20px;
+    @include adaptiv-font(20, 14);
+    @include adaptiv-lh(20, 15);
     .qusetion__text {
         margin-bottom: 20px;
         text-align: center;
     }
     .question__btn {
-        font-size: 16px;
+        @include adaptiv-font(16, 13);
         padding: 5px 10px;
         background: none;
         color: white;
