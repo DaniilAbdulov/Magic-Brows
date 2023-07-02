@@ -1065,10 +1065,6 @@ body._touch .menu__list > li._active .menu__sub-list {
         letter-spacing: 1px;
         transition: all 0.3s ease-in;
         border-radius: 5px;
-        &:hover {
-            background: #b7b7b7;
-            color: #121212;
-        }
         &:active {
             background: #fff;
             color: #121212;

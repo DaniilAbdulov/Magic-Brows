@@ -1397,10 +1397,6 @@ body._touch .menu__list > li._active .menu__sub-list {
         );
   }
 }
-.question .question__btn:hover {
-  background: #b7b7b7;
-  color: #121212;
-}
 .question .question__btn:active {
   background: #fff;
   color: #121212;
