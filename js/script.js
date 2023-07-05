@@ -15,12 +15,13 @@ content.style.display = "none";
 const question = document.querySelector(".question");
 const qButton = document.getElementById("questionButton");
 question.style.display = "flex";
-qButton.addEventListener("click", function () {
+
+// Ждем загрузки всех ресурсов
+window.addEventListener("load", function () {
+   qButton.addEventListener("click", function () {
         question.style.display = "none";
         loader.style.display = "block";
 });
-// Ждем загрузки всех ресурсов
-window.addEventListener("load", function () {
     loader.style.display = "none";
     content.style.display = "block";
         const swiper = new Swiper(".mySwiper", {
