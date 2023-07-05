@@ -8,20 +8,19 @@ pop.style.display = "none";
 const btn = document.getElementById("popbtn");
 const content = document.querySelector(".body__content");
 const loader = document.querySelector(".body__loader");
-loader.style.display = "none";
+loader.style.display = "block";
 content.style.display = "none";
-
 
 const question = document.querySelector(".question");
 const qButton = document.getElementById("questionButton");
-question.style.display = "flex";   
-qButton.addEventListener("click", function () {
-        question.style.display = "none";
-        loader.style.display = "block";
-      window.addEventListener("load", function () {
 
+// Ждем загрузки всех ресурсов
+window.addEventListener("load", function () {
     loader.style.display = "none";
-    content.style.display = "block";
+    question.style.display = "flex";
+    qButton.addEventListener("click", function () {
+        question.style.display = "none";
+        content.style.display = "block";
         const swiper = new Swiper(".mySwiper", {
             effect: "coverflow",
             loop: true,
@@ -42,10 +41,6 @@ qButton.addEventListener("click", function () {
         // gsap.from(".full-screen__text", { opacity: 0, delay: 1, y: -60 });
     });
 });
-});
-
-// Ждем загрузки всех ресурсов
-
 //время в форме
 const dateControl = document.querySelector('input[type="datetime-local"]');
 const today = new Date();
