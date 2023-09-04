@@ -250,6 +250,7 @@ textarea {
     &_image {
         img {
             border-radius: 0px 40px 0px 40px;
+            max-height: 700px;
         }
     }
     &__circle {
@@ -257,7 +258,24 @@ textarea {
         @include adaptiv-position(160, 90);
     }
 }
-
+@media (max-width: 769px) {
+    .about {
+        &_image {
+            img {
+                max-height: 843px;
+            }
+        }
+    }
+}
+@media (max-width: 540px) {
+    .about {
+        &_image {
+            img {
+                max-height: 560px;
+            }
+        }
+    }
+}
 //==========================================================================================================================
 .block {
     position: relative;
@@ -331,6 +349,7 @@ textarea {
     &__item {
         img {
             border-radius: 10px;
+            height: 100%;
             width: 100%;
             object-fit: cover;
         }
@@ -472,6 +491,14 @@ textarea {
             width: 100%;
             object-fit: cover;
             border-radius: 5px;
+            height: 650px;
+        }
+    }
+    @media (max-width: 767px) {
+        &-slide {
+            img {
+                height: 400px;
+            }
         }
     }
     @media (max-width: 767px) {
@@ -586,7 +613,7 @@ textarea {
             text-align: center;
             &::before {
                 content: "";
-                background-image: url("../img/form/dior.webp");
+                background-image: url("../img/form/form.webp");
                 position: absolute;
                 background-size: cover;
                 top: 0;

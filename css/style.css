@@ -272,6 +272,7 @@ textarea {
 }
 .about_image img {
   border-radius: 0px 40px 0px 40px;
+  max-height: 700px;
 }
 .about__circle {
   top: 5px;
@@ -289,6 +290,16 @@ textarea {
   }
 }
 
+@media (max-width: 769px) {
+  .about_image img {
+    max-height: 843px;
+  }
+}
+@media (max-width: 540px) {
+  .about_image img {
+    max-height: 560px;
+  }
+}
 .block {
   position: relative;
   z-index: 10;
@@ -409,6 +420,7 @@ textarea {
 }
 .portfolio__item img {
   border-radius: 10px;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -602,6 +614,12 @@ textarea {
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 5px;
+  height: 650px;
+}
+@media (max-width: 767px) {
+  .swiper-slide img {
+    height: 400px;
+  }
 }
 @media (max-width: 767px) {
   .swiper .swiper-slide {
@@ -779,7 +797,7 @@ textarea {
   }
   .form .form__content::before {
     content: "";
-    background-image: url("../img/form/dior.webp");
+    background-image: url("../img/form/form.webp");
     position: absolute;
     background-size: cover;
     top: 0;
